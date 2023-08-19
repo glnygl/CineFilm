@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "Science Fiction.jpg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
