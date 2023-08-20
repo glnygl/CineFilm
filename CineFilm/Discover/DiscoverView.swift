@@ -20,7 +20,7 @@ struct DiscoverView: View {
                         NavigationLink {
                             MovieDetailView(viewModel: MovieDetailViewModel(movie: movie))
                         } label: {
-                            DiscoverRowView(movie: movie)
+                            DiscoverRowView(viewModel: MovieDetailViewModel(movie: movie))
                         }
                     }
                 }.padding(.horizontal)

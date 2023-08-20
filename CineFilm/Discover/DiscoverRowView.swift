@@ -9,14 +9,14 @@ import SwiftUI
 
 struct DiscoverRowView: View {
     
-    var movie: PopularMovie?
+    var viewModel: MovieDetailViewModel!
     
     var body: some View {
         
         ZStack {
             VStack(spacing: 20) {
                 AsyncImage(
-                    url: URL(string: ConfigManager.shared.imageURL + (movie?.image ?? "")),
+                    url: URL(string: viewModel.imageUrl),
                     content: { image in
                         image.resizable()
                             .aspectRatio(contentMode: .fill)
@@ -28,13 +28,13 @@ struct DiscoverRowView: View {
                     }
                 )
                 VStack(spacing: 2) {
-                    Text(movie?.title ?? "").font(.system(size: 12)).lineLimit(1).foregroundColor(.black)
-                    Text(movie?.relaseDate.format() ?? "").font(.system(size: 10)).lineLimit(1).foregroundColor(.gray)
+                    Text(viewModel.title).font(.system(size: 12)).lineLimit(1).foregroundColor(.black)
+                    Text(viewModel.releaseDate).font(.system(size: 10)).lineLimit(1).foregroundColor(.gray)
                     Spacer()
                 }.padding(4)
 
             }.background(Color.white)
-            RateView(progress: (movie?.rate ?? 0) / 10).frame(width: 32, height: 32).position(x: 26, y: 164)
+            RateView(progress: viewModel.shownRate).frame(width: 32, height: 32).position(x: 26, y: 164)
         }.cornerRadius(10)
             .shadow(color: .gray, radius: 4, x: 2.0, y: 2.0)
     }
