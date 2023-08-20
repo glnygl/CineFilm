@@ -13,24 +13,44 @@ struct MovieDetailView: View {
     
     var body: some View {
         
-        ZStack{            
+        ZStack {
             AsyncImage(url: URL(string: ConfigManager.shared.imageURL + (viewModel?.movie?.image ?? ""))).blur(radius: 40)
-            HStack {
-                AsyncImage(
-                    url: URL(string: ConfigManager.shared.imageURL + (viewModel?.movie?.image ?? "")),
-                    content: { image in
-                        image.resizable()
-                            .aspectRatio(contentMode: .fill)
-                            .frame(maxWidth: 160, maxHeight: 220)
-                            .cornerRadius(10)
-                    },
-                    placeholder: {}
-                )
-                VStack {
-                    Text(viewModel?.movie?.title ?? "")
-                    Text(viewModel?.movie?.relaseDate ?? "")
+            
+            VStack (spacing: 20) {
+                HStack (spacing: 10) {
+                    AsyncImage(
+                        url: URL(string: ConfigManager.shared.imageURL + (viewModel?.movie?.image ?? "")),
+                        content: { image in
+                            image.resizable()
+                                .aspectRatio(contentMode: .fill)
+                                .frame(maxWidth: 160, maxHeight: 220)
+                                .cornerRadius(10)
+                        },
+                        placeholder: {}
+                    )
+                    VStack(spacing: 6) {
+                        Text(viewModel?.movie?.title ?? "")
+                            .foregroundColor(.white)
+                            .font(.system(size: 20, weight: .bold))
+                            .lineLimit(1)
+                        Text(viewModel?.movie?.relaseDate.format() ?? "")
+                            .foregroundColor(.white)
+                            .font(.system(size: 12, weight: .regular))
+                            .lineLimit(1)
+                        HStack {
+                            RateView(progress: (viewModel?.movie?.rate ?? 0) / 10).frame(width: 32, height: 32)
+                        }
+                        
+                        Text(viewModel?.movie?.overview ?? "")
+                            .foregroundColor(.white)
+                            .font(.system(size: 14, weight: .semibold))
+                        
+                    }
                 }
-            }            
+                Text(viewModel?.movie?.overview ?? "")
+                    .foregroundColor(.white)
+                    .font(.system(size: 14, weight: .semibold))
+            }
         }
     }
 }

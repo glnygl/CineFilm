@@ -19,8 +19,8 @@ struct CategoriesView: View {
                 } label: {
                     CategoryRowView(category: category)
                 }
-                .listRowInsets(.init(top: 0, leading: 10, bottom: 0, trailing: 0))
-                .listRowBackground(Color.black)
+                .listRowInsets(.init(top: 0, leading: 10, bottom: 0, trailing: -8))
+                .listRowBackground(Color.white)
                 .listRowSeparator(.hidden)
             }
             .environment(\.defaultMinListRowHeight, 60)

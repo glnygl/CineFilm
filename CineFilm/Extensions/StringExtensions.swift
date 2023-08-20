@@ -12,7 +12,8 @@ extension String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
         guard let date = dateFormatter.date(from: self) else { return "" }
-        dateFormatter.dateFormat = "MMM d, yyyy"
+        dateFormatter.dateFormat = "d MMM yyyy"
+        dateFormatter.locale = Locale(identifier: "en_us")
         return dateFormatter.string(from: date)
     }
 }

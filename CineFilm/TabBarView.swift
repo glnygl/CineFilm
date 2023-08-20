@@ -19,27 +19,23 @@ struct TabBarView: View {
         
         TabView {
             DiscoverView()
-                .font(.system(size: 30, weight: .bold, design: .rounded))
                 .tabItem {
                     Image(systemName: "arrowtriangle.up.fill")
                     Text("Discover")
                 }
             SearchView()
-                .font(.system(size: 30, weight: .bold, design: .rounded))
                 .tabItem {
                     Image(systemName: "magnifyingglass")
                     Text("Search")
                 }
          
             CategoriesView()
-                .font(.system(size: 30, weight: .bold, design: .rounded))
                 .tabItem {
                     Image(systemName: "list.bullet")
                     Text("Categories")
                 }
          
             FavoritesView()
-                .font(.system(size: 30, weight: .bold, design: .rounded))
                 .tabItem {
                     Image(systemName: "heart.fill")
                     Text("Favorites")

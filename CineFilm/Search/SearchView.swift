@@ -12,7 +12,6 @@ struct SearchView: View {
         VStack {
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(.pink)
     }
 }
 

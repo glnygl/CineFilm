@@ -17,13 +17,13 @@ struct RateView: View {
             Circle()
                 .fill(Color.appColor.darkGreen)
             Text(String(format: "%.1f", progress * 10))
-                .foregroundColor(.white).font(.system(size: 10, weight: .bold, design: .rounded))
+                .foregroundColor(.white).font(.system(size: 10, weight: .bold))
             Circle()
                 .stroke(lineWidth: 4.0)
                 .foregroundColor(Color.appColor.lightGreen)
             Circle()
                   .trim(from: 0.0, to: CGFloat(min(self.progress, 10.0)))
-                  .stroke(style: StrokeStyle(lineWidth: 4.0, lineCap: .round, lineJoin: .round))
+                  .stroke(lineWidth: 4.0)
                   .foregroundColor(Color.appColor
                     .neonGreen)
         }

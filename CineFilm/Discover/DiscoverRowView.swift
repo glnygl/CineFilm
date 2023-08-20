@@ -16,13 +16,16 @@ struct DiscoverRowView: View {
         ZStack {
             VStack(spacing: 20) {
                 AsyncImage(
-                    url: URL(string: ConfigManager.shared.imageURL + (movie?.image ?? "noImage")),
+                    url: URL(string: ConfigManager.shared.imageURL + (movie?.image ?? "")),
                     content: { image in
                         image.resizable()
                             .aspectRatio(contentMode: .fill)
                             .frame(maxWidth: 120, maxHeight: 200)
                     },
-                    placeholder: {}
+                    placeholder: {
+                        Image("noImage").resizable().frame(maxWidth: 100, maxHeight: 200)
+                            .aspectRatio(contentMode: .fill)
+                    }
                 )
                 VStack(spacing: 2) {
                     Text(movie?.title ?? "").font(.system(size: 12)).lineLimit(1).foregroundColor(.black)
