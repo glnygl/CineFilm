@@ -10,9 +10,9 @@ import SwiftUI
 struct TabBarView: View {
     
     init() {
-        UITabBar.appearance().backgroundColor = UIColor.darkGray
-        UITabBar.appearance().barTintColor =  UIColor.darkGray
-        UITabBar.appearance().unselectedItemTintColor = UIColor.white
+        UITabBar.appearance().backgroundColor = UIColor.white
+        UITabBar.appearance().barTintColor =  UIColor.white
+        UITabBar.appearance().unselectedItemTintColor = UIColor.darkGray
     }
     
     var body: some View {
@@ -45,7 +45,7 @@ struct TabBarView: View {
                     Text("Favorites")
                 }
         }
-        .accentColor(Color("torchRed"))
+        .accentColor(Color.appColor.torchRed)
     }
 }
 

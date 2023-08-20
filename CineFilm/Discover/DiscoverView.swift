@@ -15,11 +15,16 @@ struct DiscoverView: View {
         
         NavigationView {
             ScrollView(showsIndicators: false) {
-                LazyVGrid(columns: [GridItem(.adaptive(minimum: 80))]) {
+                LazyVGrid(columns: [GridItem(.adaptive(minimum: 100))]) {
                     ForEach(viewModel.movies) { movie in
-                        DiscoverRowView(movie: movie)
+                        NavigationLink {
+                            MovieDetailView(viewModel: MovieDetailViewModel(movie: movie))
+                        } label: {
+                            DiscoverRowView(movie: movie)
+                        }
                     }
                 }.padding(.horizontal)
+                Spacer()
             }
             .navigationTitle("Discover")
         }

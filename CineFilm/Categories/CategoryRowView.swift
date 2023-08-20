@@ -25,7 +25,7 @@ struct CategoryRowView: View {
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 7)
-                .foregroundColor(Color("torchRed"))
+                .foregroundColor(Color.appColor.torchRed)
         }
     }
 }

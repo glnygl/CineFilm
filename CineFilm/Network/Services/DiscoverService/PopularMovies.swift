@@ -17,6 +17,7 @@ struct PopularMovie: Codable, Identifiable {
     let image: String
     let overview: String
     let relaseDate: String
+    let rate: Double
     
     enum CodingKeys: String, CodingKey {
         case id
@@ -24,5 +25,6 @@ struct PopularMovie: Codable, Identifiable {
         case image = "poster_path"
         case overview
         case relaseDate = "release_date"
+        case rate = "vote_average"
     }
 }
