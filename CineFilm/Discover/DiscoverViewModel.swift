@@ -9,9 +9,11 @@ import Foundation
 
 class DiscoverViewModel: ObservableObject {
     
-    @Published var movies: [PopularMovie] = []    
+    @Published var movies: [PopularMovie] = []
+    var isDiscoverLoaded = false
     
     func getPopularMovies() {
+        if isDiscoverLoaded { return }
         let params = DiscoverRequestParams(page: 1)
         let request = DiscoverRequest(params: params)
         
@@ -19,6 +21,7 @@ class DiscoverViewModel: ObservableObject {
             switch response {
             case .success(let result):
                 self?.movies = result.results
+                self?.isDiscoverLoaded = true
             case .failure(let error):
                 print("\(error.localizedDescription)")
             }

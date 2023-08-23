@@ -9,9 +9,15 @@ import Foundation
 
 class MovieDetailViewModel: ObservableObject {
     var movie: PopularMovie?
+    @Published var cast: [Cast] = []
+    var isCastLoaded = false
     
     init(movie: PopularMovie) {
         self.movie = movie
+    }
+    
+    var id: Int {
+        movie?.id ?? 0
     }
     
     var title: String {
@@ -37,4 +43,25 @@ class MovieDetailViewModel: ObservableObject {
     var shownRate: Double {
         rate / 10
     }
+    
+    var genre: String {
+        let genreId = movie?.genres.first ?? 0
+        return GenreList.getGenre(id: genreId)
+    }
+    
+    func getCast(movieId: Int) {
+        if isCastLoaded { return }
+        let request = CastRequest(movieId: movieId)
+        
+        CastService().getCast(request: request) { [weak self] response in
+            switch response {
+            case .success(let result):
+                self?.cast = result.cast
+                self?.isCastLoaded = true
+            case .failure(let error):
+                print("\(error.localizedDescription)")
+            }
+        }
+    }
+    
 }

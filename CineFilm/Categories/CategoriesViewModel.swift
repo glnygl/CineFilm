@@ -10,7 +10,7 @@ import Foundation
 class CategoriesViewModel: ObservableObject {
     
     @Published var categories: [Category] = []
-    @Published var isCategoriesLoaded = false
+    var isCategoriesLoaded = false
     
     func getCategories() {
         if isCategoriesLoaded { return }

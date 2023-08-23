@@ -11,6 +11,7 @@ enum RequestPaths: String {
     case discover = "discover/movie"
     case search = "search/movie"
     case categories = "genre/movie/list"
+    case credits = "movie/%@/credits"
 }
 
 class BaseRequest: URLRequestConvertible {

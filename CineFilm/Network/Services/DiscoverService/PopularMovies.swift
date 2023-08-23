@@ -18,6 +18,7 @@ struct PopularMovie: Codable, Identifiable {
     let overview: String
     let relaseDate: String
     let rate: Double
+    let genres: [Int]
     
     enum CodingKeys: String, CodingKey {
         case id
@@ -26,5 +27,6 @@ struct PopularMovie: Codable, Identifiable {
         case overview
         case relaseDate = "release_date"
         case rate = "vote_average"
+        case genres = "genre_ids"
     }
 }
