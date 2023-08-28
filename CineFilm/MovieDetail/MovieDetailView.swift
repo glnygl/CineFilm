@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MovieDetailView: View {
     
-    var viewModel: MovieDetailViewModel!
+    @StateObject var viewModel: MovieDetailViewModel
     
     var body: some View {
         NavigationView {
@@ -52,8 +52,17 @@ struct MovieDetailView: View {
                         .foregroundColor(.white)
                         .font(.system(size: 14, weight: .semibold))
                         .padding(20)
-                    Spacer()
+                    
+                    ScrollView(.horizontal) {
+                        LazyHGrid(rows:  [GridItem(.adaptive(minimum: 100, maximum: 100))], alignment: .center) {
+                            ForEach(viewModel.cast, id: \.self) { cast in
+                                CastRowView(viewModel: CastViewModel(cast: cast))
+                            }
+                            .frame(height: 200)
+                        }.padding(.horizontal)
+                    }
                 }
+                Spacer()
         }.background(
             AsyncImage(url: URL(string: viewModel.imageUrl)).blur(radius: 40))
         }.onAppear {

@@ -18,6 +18,8 @@
 		299A718A2A955BD9009F14F1 /* CastResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299A71892A955BD9009F14F1 /* CastResponse.swift */; };
 		299A718C2A955BE5009F14F1 /* CastService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299A718B2A955BE5009F14F1 /* CastService.swift */; };
 		299A718E2A9560D5009F14F1 /* GenreList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299A718D2A9560D5009F14F1 /* GenreList.swift */; };
+		299A71922A97F8CD009F14F1 /* CastRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299A71912A97F8CD009F14F1 /* CastRowView.swift */; };
+		299A71952A97FB42009F14F1 /* CastViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299A71942A97FB42009F14F1 /* CastViewModel.swift */; };
 		29B218B12A8BF5FE00DF443B /* CineFilmApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B218B02A8BF5FE00DF443B /* CineFilmApp.swift */; };
 		29B218B32A8BF5FE00DF443B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B218B22A8BF5FE00DF443B /* ContentView.swift */; };
 		29B218B52A8BF60000DF443B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29B218B42A8BF60000DF443B /* Assets.xcassets */; };
@@ -78,6 +80,8 @@
 		299A71892A955BD9009F14F1 /* CastResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastResponse.swift; sourceTree = "<group>"; };
 		299A718B2A955BE5009F14F1 /* CastService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastService.swift; sourceTree = "<group>"; };
 		299A718D2A9560D5009F14F1 /* GenreList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreList.swift; sourceTree = "<group>"; };
+		299A71912A97F8CD009F14F1 /* CastRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastRowView.swift; sourceTree = "<group>"; };
+		299A71942A97FB42009F14F1 /* CastViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastViewModel.swift; sourceTree = "<group>"; };
 		29B218AD2A8BF5FE00DF443B /* CineFilm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CineFilm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29B218B02A8BF5FE00DF443B /* CineFilmApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CineFilmApp.swift; sourceTree = "<group>"; };
 		29B218B22A8BF5FE00DF443B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -169,6 +173,14 @@
 			path = CastService;
 			sourceTree = "<group>";
 		};
+		299A71932A97FB18009F14F1 /* CastDetail */ = {
+			isa = PBXGroup;
+			children = (
+				299A71942A97FB42009F14F1 /* CastViewModel.swift */,
+			);
+			path = CastDetail;
+			sourceTree = "<group>";
+		};
 		29B218A42A8BF5FE00DF443B = {
 			isa = PBXGroup;
 			children = (
@@ -206,6 +218,7 @@
 				29B218FC2A8BFA1C00DF443B /* MovieDetail */,
 				29B218FD2A8BFA2B00DF443B /* MovieList */,
 				29B218F52A8BF64700DF443B /* AlertView.swift */,
+				299A71932A97FB18009F14F1 /* CastDetail */,
 				29B218FF2A8BFD6F00DF443B /* Extensions */,
 				29B219082A8C150900DF443B /* Utils */,
 				291DA2B42A91882C00870D86 /* CustomViews */,
@@ -325,6 +338,7 @@
 			children = (
 				291DA2AC2A914E0600870D86 /* MovieDetailView.swift */,
 				291DA2AE2A914E3400870D86 /* MovieDetailViewModel.swift */,
+				299A71912A97F8CD009F14F1 /* CastRowView.swift */,
 			);
 			path = MovieDetail;
 			sourceTree = "<group>";
@@ -616,6 +630,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				29B218EF2A8BF63D00DF443B /* CategoriesView.swift in Sources */,
+				299A71952A97FB42009F14F1 /* CastViewModel.swift in Sources */,
 				29B219012A8BFD9600DF443B /* EncodableExtensions.swift in Sources */,
 				29B218F02A8BF63D00DF443B /* SearchView.swift in Sources */,
 				29B218EC2A8BF63D00DF443B /* FavoritesViewModel.swift in Sources */,
@@ -625,6 +640,7 @@
 				299A718A2A955BD9009F14F1 /* CastResponse.swift in Sources */,
 				29B219162A8EC2AE00DF443B /* ConfigManager.swift in Sources */,
 				299A718E2A9560D5009F14F1 /* GenreList.swift in Sources */,
+				299A71922A97F8CD009F14F1 /* CastRowView.swift in Sources */,
 				29B218F42A8BF63D00DF443B /* PopularMovies.swift in Sources */,
 				291DA2B12A91609900870D86 /* RateView.swift in Sources */,
 				29B219032A8C021D00DF443B /* DiscoverRequest.swift in Sources */,
