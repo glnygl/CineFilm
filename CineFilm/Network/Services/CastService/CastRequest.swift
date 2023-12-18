@@ -7,7 +7,8 @@
 
 import Foundation
 
-class CastRequest: BaseRequest {
+final class CastRequest: BaseRequest {
+    
     init(movieId: Int) {
         super.init()
         path = String.init(format:  RequestPaths.credits.rawValue, "\(movieId)")

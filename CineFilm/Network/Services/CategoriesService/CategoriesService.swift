@@ -7,7 +7,7 @@
 
 import Alamofire
 
-class CategoriesService: BaseService {
+final class CategoriesService: BaseService {
     
     func getCategories(request: CategoriesRequest, completion:@escaping (Result<Categories, AFError>) -> Void) {
         self.performRequest(request: request, completion: completion)

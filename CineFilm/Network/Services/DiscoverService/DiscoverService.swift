@@ -7,7 +7,7 @@
 
 import Alamofire
 
-class DiscoverService: BaseService {
+final class DiscoverService: BaseService {
     
     func getPopularMovies(request: DiscoverRequest, completion:@escaping (Result<PopularMovies, AFError>) -> Void) {
         self.performRequest(request: request, completion: completion)

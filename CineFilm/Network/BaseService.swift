@@ -10,14 +10,14 @@ import Alamofire
 class BaseService {
     func performRequest<T:Decodable>(request: BaseRequest, loadingEnable: Bool = true, completion:@escaping (Result<T, AFError>) -> Void) {
         if request.blocks {
-            //loadingEnable ? HudHelper.showBlockingHud() : nil
+            //loading
         }
         
         AF.request(request)
             .responseDecodable (decoder: JSONDecoder()){ (response: DataResponse<T, AFError>) in
                 completion(response.result)
                 if request.blocks {
-                    //loadingEnable ? HudHelper.hideBlockingHud() : nil
+                    //loading
                 }
             }
     }

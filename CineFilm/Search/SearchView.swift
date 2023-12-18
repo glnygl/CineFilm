@@ -8,10 +8,28 @@
 import SwiftUI
 
 struct SearchView: View {
+    
+    @StateObject var viewModel = SearchViewModel()
+    @State private var searchText = ""
+    
     var body: some View {
-        VStack {
+        NavigationStack {
+            VStack {
+                List(viewModel.movies) { movie in
+                    Text(movie.title)
+                }.searchable(text: $searchText)
+                    .disableAutocorrection(true)
+                    .onChange(of: searchText) { newQuery in
+                        Task { viewModel.fetchSearchedMovies(query: searchText) }
+                    }
+            }
+            .navigationTitle("Search")
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
+    }
+    
+    private func printgg(keyword: String) {
+        print("g")
     }
 }
 

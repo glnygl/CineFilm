@@ -7,7 +7,7 @@
 
 import Foundation
 
-class ConfigManager: NSObject {
+final class ConfigManager: NSObject {
     
     static let shared = ConfigManager()
     
@@ -19,7 +19,7 @@ class ConfigManager: NSObject {
         readConfig()
     }
     
-    func readConfig() {
+    private func readConfig() {
         if let path = Bundle.main.path(forResource: "Info", ofType: "plist") {
             if let dict = NSDictionary(contentsOfFile: path) {
                 self.baseURL = dict["BaseURL"] as? String ?? ""

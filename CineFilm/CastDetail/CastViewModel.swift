@@ -7,7 +7,7 @@
 
 import Foundation
 
-class CastViewModel: ObservableObject {
+final class CastViewModel: ObservableObject {
     
     var cast: Cast?
     

@@ -7,7 +7,7 @@
 
 import Foundation
 
-class CategoriesViewModel: ObservableObject {
+final class CategoriesViewModel: ObservableObject {
     
     @Published var categories: [Category] = []
     var isCategoriesLoaded = false

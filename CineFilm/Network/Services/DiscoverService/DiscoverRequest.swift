@@ -7,7 +7,7 @@
 
 import Foundation
 
-class DiscoverRequest: BaseRequest {
+final class DiscoverRequest: BaseRequest {
     init(params: DiscoverRequestParams) {
         super.init()
         path = RequestPaths.discover.rawValue

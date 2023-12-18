@@ -7,10 +7,11 @@
 
 import Foundation
 
-class MovieDetailViewModel: ObservableObject {
+final class MovieDetailViewModel: ObservableObject {
+    
     var movie: PopularMovie?
     @Published var cast: [Cast] = []
-    var isCastLoaded = false
+    private var isCastLoaded = false
     
     init(movie: PopularMovie) {
         self.movie = movie

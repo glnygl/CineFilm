@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Utils {
+final class Utils {
     static func queryString(dictionary: [String:Any]?) -> String {
         guard let dictionary = dictionary else { return "" }
         var queryString = "?"

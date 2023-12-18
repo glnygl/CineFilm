@@ -7,7 +7,7 @@
 
 import Foundation
 
-class CategoriesRequest: BaseRequest {
+final class CategoriesRequest: BaseRequest {
     init(params: CategoriesRequestParams) {
         super.init()
         path = RequestPaths.categories.rawValue

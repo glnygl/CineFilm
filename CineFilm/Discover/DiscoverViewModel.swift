@@ -7,7 +7,7 @@
 
 import Foundation
 
-class DiscoverViewModel: ObservableObject {
+final class DiscoverViewModel: ObservableObject {
     
     @Published var movies: [PopularMovie] = []
     var isDiscoverLoaded = false
