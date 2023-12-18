@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import CachedAsyncImage
 
 struct DiscoverRowView: View {
     
@@ -15,7 +16,7 @@ struct DiscoverRowView: View {
         
         ZStack {
             VStack(spacing: 20) {
-                AsyncImage(
+                CachedAsyncImage(
                     url: URL(string: viewModel.imageUrl),
                     content: { image in
                         image.resizable()

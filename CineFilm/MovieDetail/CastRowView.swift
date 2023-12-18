@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import CachedAsyncImage
 
 struct CastRowView: View {
     
@@ -13,7 +14,7 @@ struct CastRowView: View {
     
     var body: some View {
         VStack (spacing: 10) {
-            AsyncImage(
+            CachedAsyncImage(
                 url: URL(string: viewModel.imageUrl),
                 content: { image in
                     image.resizable()

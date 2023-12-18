@@ -16,6 +16,7 @@
 		1D6C7485BAEC97C913A2BCFFCE272DD4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD0CE05D5D076B1B5190EE5DF97FD54E /* Foundation.framework */; };
 		2653F3620A5B753022B326A402E6112A /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 661080B669C365CD6444FCB0370F5F5D /* ImageCache.swift */; };
 		282FCD4EA8B05830E9108690B8CD336B /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A30A8985E0D17C20B562785355118F /* Session.swift */; };
+		296BC5F82B30839300AECF77 /* CachedAsyncImage in Frameworks */ = {isa = PBXBuildFile; productRef = 296BC5F72B30839300AECF77 /* CachedAsyncImage */; };
 		308C071E77AB6FA07B507318C144F8E3 /* Pods-CineFilmTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D74E4A7AA8A3249DA054C0491F986ED1 /* Pods-CineFilmTests-dummy.m */; };
 		320C0D7A88AA812EFB20016BA1F5D7AE /* AFError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78C0B8691ED4C91ABE55988C87576E8 /* AFError.swift */; };
 		385BC4B250B6A6DB8AAAEA77D5B7A46F /* Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D9D4500F5480B4B1E7AD5F2CA7103E /* Combine.swift */; };
@@ -175,7 +176,7 @@
 		95CD2EA03DEB445050DB3C2A5DCFB72C /* Pods-CineFilmTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CineFilmTests.release.xcconfig"; sourceTree = "<group>"; };
 		9912E964A3FB71FDFF751549D432DD35 /* URLRequest+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "URLRequest+Alamofire.swift"; path = "Source/URLRequest+Alamofire.swift"; sourceTree = "<group>"; };
 		9C21404A7A909C8307B89208653D6C80 /* Pods-CineFilm-CineFilmUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-CineFilm-CineFilmUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9D973256E398C4BAF0E83202E2D794CE /* RedirectHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RedirectHandler.swift; path = Source/RedirectHandler.swift; sourceTree = "<group>"; };
 		A033F559D83538D88E30FFD904F50542 /* Pods-CineFilm-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CineFilm-acknowledgements.plist"; sourceTree = "<group>"; };
 		A2E44D822E635883D18181765A06624B /* MultipartFormData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MultipartFormData.swift; path = Source/MultipartFormData.swift; sourceTree = "<group>"; };
@@ -252,6 +253,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC2B056A12062D66CFD37830C9DFC22F /* Foundation.framework in Frameworks */,
+				296BC5F82B30839300AECF77 /* CachedAsyncImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -402,7 +404,6 @@
 				6F17F05CF1BD48713510060D42E215C7 /* UIImageView+AlamofireImage.swift */,
 				6E66100AAFD679CA8D460A631D2E12B6 /* Support Files */,
 			);
-			name = AlamofireImage;
 			path = AlamofireImage;
 			sourceTree = "<group>";
 		};
@@ -457,7 +458,6 @@
 				E71C8AFFD65E05E2C6D0C3A9153B3894 /* Validation.swift */,
 				10C6886934C839E31484FC918097ACF5 /* Support Files */,
 			);
-			name = Alamofire;
 			path = Alamofire;
 			sourceTree = "<group>";
 		};
@@ -543,6 +543,9 @@
 				60D7E3809851E8C3532675EF25E96C32 /* PBXTargetDependency */,
 			);
 			name = "Pods-CineFilm";
+			packageProductDependencies = (
+				296BC5F72B30839300AECF77 /* CachedAsyncImage */,
+			);
 			productName = Pods_CineFilm;
 			productReference = EF5312C0FB9AC39D79C94E7C27C58F69 /* Pods-CineFilm */;
 			productType = "com.apple.product-type.framework";
@@ -621,6 +624,9 @@
 				en,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			packageReferences = (
+				296BC5F62B30839300AECF77 /* XCRemoteSwiftPackageReference "swiftui-cached-async-image" */,
+			);
 			productRefGroup = CFF2CF159AD27E3BBBEB18F501CCB06D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -1354,6 +1360,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		296BC5F62B30839300AECF77 /* XCRemoteSwiftPackageReference "swiftui-cached-async-image" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/lorenzofiamingo/swiftui-cached-async-image";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.1.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		296BC5F72B30839300AECF77 /* CachedAsyncImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 296BC5F62B30839300AECF77 /* XCRemoteSwiftPackageReference "swiftui-cached-async-image" */;
+			productName = CachedAsyncImage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 }
