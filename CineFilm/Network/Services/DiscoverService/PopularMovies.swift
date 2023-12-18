@@ -14,7 +14,7 @@ struct PopularMovies: Codable {
 struct PopularMovie: Codable, Identifiable {
     let id: Int
     let title: String
-    let image: String
+    let image: String?
     let overview: String
     let relaseDate: String
     let rate: Double

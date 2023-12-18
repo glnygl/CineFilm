@@ -19,11 +19,12 @@ struct CastRowView: View {
                 content: { image in
                     image.resizable()
                         .aspectRatio(contentMode: .fill)
-                        .frame(minWidth: 100, maxWidth: 100, maxHeight: 200)
                         .cornerRadius(10)
+                        .frame(width: 100, height: 150)
                 },
                 placeholder: {
-                    Image("noImage").resizable().frame(minWidth: 100, maxWidth: 100, maxHeight: 200)
+                    Image("noImage").resizable()
+                        .frame(width: 100, height: 150)
                         .aspectRatio(contentMode: .fit)
                 }
             )

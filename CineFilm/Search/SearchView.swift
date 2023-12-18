@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import CachedAsyncImage
 
 struct SearchView: View {
     
@@ -16,7 +17,18 @@ struct SearchView: View {
         NavigationStack {
             VStack {
                 List(viewModel.movies) { movie in
-                    Text(movie.title)
+                    HStack(spacing: 20) {
+                        CachedAsyncImage(url: URL(string: ConfigManager.shared.imageURL + (movie.image ?? ""))){ image in
+                            image
+                                .resizable()
+                                .scaledToFill()
+                        } placeholder: {
+                            Image("noImage").resizable()
+                        } .frame(width: 60, height: 60)
+                            .background(Color.gray)
+                            .clipShape(Circle())
+                        Text(movie.title)
+                    }
                 }.searchable(text: $searchText)
                     .disableAutocorrection(true)
                     .onChange(of: searchText) { newQuery in

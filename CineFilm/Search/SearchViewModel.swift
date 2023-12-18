@@ -23,7 +23,5 @@ final class SearchViewModel: ObservableObject {
                 print("\(error.localizedDescription)")
             }
         }   
-    }
-    
-    
+    }   
 }
