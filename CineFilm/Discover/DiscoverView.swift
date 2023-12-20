@@ -19,6 +19,7 @@ struct DiscoverView: View {
                     ForEach(viewModel.movies) { movie in
                         NavigationLink {
                             MovieDetailView(viewModel: MovieDetailViewModel(movie: movie))
+                                .modifier(BaseView())
                         } label: {
                             DiscoverRowView(viewModel: MovieDetailViewModel(movie: movie))
                         }

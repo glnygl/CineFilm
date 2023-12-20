@@ -28,6 +28,10 @@ struct SearchView: View {
                             .background(Color.gray)
                             .clipShape(Circle())
                         Text(movie.title)
+                        NavigationLink {
+                            MovieDetailView(viewModel: MovieDetailViewModel(movie: movie))
+                                .modifier(BaseView())
+                        } label: {}
                     }
                 }.searchable(text: $searchText)
                     .disableAutocorrection(true)

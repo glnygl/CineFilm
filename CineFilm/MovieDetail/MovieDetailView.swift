@@ -31,21 +31,21 @@ struct MovieDetailView: View {
                             Text(viewModel.title)
                                 .foregroundColor(.white)
                                 .font(.system(size: 20, weight: .bold))
-                                .lineLimit(1).frame(maxWidth: 164)
+                                .frame(maxWidth: 164)
+                                .multilineTextAlignment(.center)
                             Text(viewModel.releaseDate)
                                 .foregroundColor(.white)
                                 .font(.system(size: 12, weight: .regular))
                                 .padding(.bottom, 16)
                                 .lineLimit(1)
-                            HStack(spacing: 20) {
+                            VStack(spacing: 20) {
                                 RateView(progress: (viewModel.shownRate)).frame(width: 32, height: 32)
-                                HStack {
-                                    Text(viewModel.genre)
-                                        .foregroundColor(.white)
-                                        .font(.system(size: 12, weight: .regular))
-                                        .padding(EdgeInsets(top: 4, leading: 8, bottom: 4, trailing: 8))
-                                        .lineLimit(1)
-                                }.background(Color.appColor.darkGreen)
+                                Text(viewModel.genre)
+                                    .foregroundColor(.white)
+                                    .font(.system(size: 12, weight: .regular))
+                                    .padding(EdgeInsets(top: 4, leading: 8, bottom: 4, trailing: 8))
+                                    .lineLimit(1)
+                                    .background(Color.appColor.torchRed)
                             }
                         }
                     }
