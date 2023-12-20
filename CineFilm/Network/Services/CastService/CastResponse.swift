@@ -11,7 +11,7 @@ struct CastResponse: Codable {
     var cast: [Cast]
 }
 
-struct Cast: Codable, Hashable {
+struct Cast: Codable, Identifiable {
     var id: Int
     var name: String
     var cover: String?

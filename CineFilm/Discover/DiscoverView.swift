@@ -11,21 +11,32 @@ struct DiscoverView: View {
     
     @StateObject var viewModel = DiscoverViewModel()
     
+    let columns = [
+          GridItem(.flexible(), spacing: 10),
+          GridItem(.flexible(), spacing: 10),
+          GridItem(.flexible(), spacing: 10)
+      ]
+    
     var body: some View {
         
         NavigationView {
+            GeometryReader { geo in
             ScrollView(showsIndicators: false) {
-                LazyVGrid(columns: [GridItem(.adaptive(minimum: 100))]) {
+                LazyVGrid(columns: columns, spacing: 10) {
                     ForEach(viewModel.movies) { movie in
                         NavigationLink {
                             MovieDetailView(viewModel: MovieDetailViewModel(movie: movie))
                                 .modifier(BaseView())
                         } label: {
                             DiscoverRowView(viewModel: MovieDetailViewModel(movie: movie))
+                                .frame(width: (geo.size.width - 40) / 3)
+                            
                         }
                     }
-                }.padding(.horizontal)
+                }
+                .padding(10)
                 Spacer()
+            }
             }
             .navigationTitle("Discover")
         }

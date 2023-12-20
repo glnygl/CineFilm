@@ -12,6 +12,10 @@ struct MovieDetailView: View {
     
     @StateObject var viewModel: MovieDetailViewModel
     
+    let rows = [
+        GridItem(.flexible())
+      ]
+    
     var body: some View {
         NavigationView {
             ScrollView(showsIndicators: false) {
@@ -55,8 +59,8 @@ struct MovieDetailView: View {
                         .padding(20)
                     
                     ScrollView(.horizontal) {
-                        LazyHGrid(rows:  [GridItem(.adaptive(minimum: 100, maximum: 100))], alignment: .center) {
-                            ForEach(viewModel.cast, id: \.self) { cast in
+                        LazyHGrid(rows: rows, alignment: .center) {
+                            ForEach(viewModel.cast) { cast in
                                 CastRowView(viewModel: CastViewModel(cast: cast))
                             }
                             .frame(height: 200)
