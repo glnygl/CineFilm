@@ -6,17 +6,40 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct FavoritesView: View {
+    
+    @StateObject var viewModel = FavoritesViewModel()
+    @Query private var favoriteMovies : [MovieDataItem]
+    
+    let columns = [
+          GridItem(.flexible(), spacing: 10),
+          GridItem(.flexible(), spacing: 10),
+          GridItem(.flexible(), spacing: 10)
+      ]
+    
     var body: some View {
-        VStack {
+        NavigationView {
+            GeometryReader { geo in
+            ScrollView(showsIndicators: false) {
+                LazyVGrid(columns: columns, spacing: 10) {
+                    ForEach(favoriteMovies) { favoriteMovie in
+                        let movie = viewModel.getMovieModel(favoriteMovie: favoriteMovie)
+                        NavigationLink {                            
+                            MovieDetailView(viewModel: MovieDetailViewModel(movie: movie))
+                                .modifier(BaseView())
+                        } label: {
+                            DiscoverRowView(viewModel: MovieDetailViewModel(movie: movie))
+                                .frame(width: (geo.size.width - 40) / 3)
+                            
+                        }
+                    }
+                }
+                .padding(10)
+                Spacer()
+            }
+            }.navigationTitle("Favorites")
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-    }
-}
-
-struct FavoritesView_Previews: PreviewProvider {
-    static var previews: some View {
-        FavoritesView()
     }
 }
