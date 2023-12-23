@@ -12,6 +12,7 @@ final class MovieDetailViewModel: ObservableObject {
     var movie: PopularMovie?
     @Published var cast: [Cast] = []
     private var isCastLoaded = false
+    @Published var isFavorite = false
     
     init(movie: PopularMovie) {
         self.movie = movie
@@ -50,6 +51,14 @@ final class MovieDetailViewModel: ObservableObject {
         return GenreList.getGenre(id: genreId)
     }
     
+    var favoriteImage: String {
+        isFavorite ? "heart.fill" : "heart"
+    }
+    
+    var favoriteMovie: MovieDataItem {
+        setMovieData()
+    }
+    
     func getCast(movieId: Int) {
         if isCastLoaded { return }
         let request = CastRequest(movieId: movieId)
@@ -65,4 +74,13 @@ final class MovieDetailViewModel: ObservableObject {
         }
     }
     
+    func setMovieData() -> MovieDataItem {
+        return MovieDataItem(id: movie?.id ?? 0, title: movie?.title ?? "", image: movie?.image ?? "", overview: movie?.overview ?? "", relaseDate: movie?.relaseDate ?? "", rate: movie?.rate ?? 0, genres: movie?.genres ?? [])
+    }
+    
+    func checkIsFavorite(movies: [MovieDataItem]?) -> Bool {
+        guard let movies = movies else { return false }
+        let ids = movies.map { $0.id }
+        return ids.contains(favoriteMovie.id) ? true : false
+    }
 }

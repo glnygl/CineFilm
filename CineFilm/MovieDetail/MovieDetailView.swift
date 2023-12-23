@@ -7,17 +7,19 @@
 
 import SwiftUI
 import CachedAsyncImage
+import SwiftData
 
 struct MovieDetailView: View {
     
     @StateObject var viewModel: MovieDetailViewModel
+    @Environment(\.modelContext) private var context
+    @Query private var favoriteMovies : [MovieDataItem]
     
     let rows = [
         GridItem(.flexible())
       ]
     
     var body: some View {
-        NavigationView {
             ScrollView(showsIndicators: false) {
                 VStack (spacing: 20) {
                     HStack (spacing: 20) {
@@ -68,16 +70,26 @@ struct MovieDetailView: View {
                     }
                 }
                 Spacer()
+        }.toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Button("", systemImage: viewModel.favoriteImage) {
+                    if viewModel.checkIsFavorite(movies: favoriteMovies) {
+                        viewModel.isFavorite = false
+                        if let selectedMovie = favoriteMovies.filter({ $0.id == viewModel.favoriteMovie.id}).first {
+                            context.delete(selectedMovie)
+                            try! context.save()
+                        }
+                    } else {
+                        viewModel.isFavorite = true
+                        context.insert(viewModel.favoriteMovie)
+                        try! context.save()
+                    }
+                }
+            }
         }.background(
             AsyncImage(url: URL(string: viewModel.imageUrl)).blur(radius: 40))
-        }.onAppear {
+        .onAppear {
             viewModel.getCast(movieId: viewModel.id)
         }
-    }
-}
-
-struct MovieDetailView_Previews: PreviewProvider {
-    static var previews: some View {
-        MovieDetailView(viewModel: MovieDetailViewModel(movie: PopularMovie(id: 0, title: "Heart of stone", image: "", overview: "1yhjhgklkşlıkujytrdyfughıjlşkijlıhuyftdfguhjtxyctugıhojpliojıhuyguhıljkşigfhcvjblkhvgfcgvbjngfchvjbhknmçkkjhvgcvbj", relaseDate: "", rate: 7, genres: [0])))
     }
 }
