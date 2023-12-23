@@ -35,7 +35,7 @@ struct SearchView: View {
                     }
                 }.searchable(text: $searchText)
                     .disableAutocorrection(true)
-                    .onChange(of: searchText) { newQuery in
+                    .onChange(of: searchText) { _ , newQuery in
                         Task { viewModel.fetchSearchedMovies(query: searchText) }
                     }
             }

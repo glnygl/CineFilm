@@ -90,6 +90,7 @@ struct MovieDetailView: View {
             AsyncImage(url: URL(string: viewModel.imageUrl)).blur(radius: 40))
         .onAppear {
             viewModel.getCast(movieId: viewModel.id)
+            viewModel.isFavorite = viewModel.checkIsFavorite(movies: favoriteMovies)
         }
     }
 }
