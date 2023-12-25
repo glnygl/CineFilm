@@ -21,10 +21,9 @@ struct DiscoverRowView: View {
                     content: { image in
                         image.resizable()
                             .aspectRatio(contentMode: .fill)
-                            //.frame(maxWidth: 120, maxHeight: 200)
                     },
                     placeholder: {
-                        Image("noImage").resizable()//.frame(maxWidth: 100, maxHeight: 200)
+                        Image("noImage").resizable()
                             .aspectRatio(contentMode: .fill)
                     }
                 )

@@ -15,7 +15,8 @@ struct CategoriesView: View {
         NavigationView {
             List(viewModel.categories) { category in
                 NavigationLink {
-                   // TODO
+                    CategoryView(viewModel: CategoryViewModel(categoryId: category.id, categoryName: category.name))
+                        .modifier(BaseView())
                 } label: {
                     CategoryRowView(category: category)
                 }

@@ -1,26 +1,24 @@
 //
-//  DiscoverView.swift
+//  CategoryView.swift
 //  CineFilm
 //
-//  Created by glnygl on 14.08.2023.
+//  Created by glnygl on 25.12.2023.
 //
 
 import SwiftUI
 
-struct DiscoverView: View {
+struct CategoryView: View {
     
-    @StateObject var viewModel = DiscoverViewModel()
+    @StateObject var viewModel: CategoryViewModel
     
     let columns = [
-          GridItem(.flexible(), spacing: 10),
-          GridItem(.flexible(), spacing: 10),
-          GridItem(.flexible(), spacing: 10)
-      ]
+        GridItem(.flexible(), spacing: 10),
+        GridItem(.flexible(), spacing: 10),
+        GridItem(.flexible(), spacing: 10)
+    ]
     
     var body: some View {
-        
-        NavigationView {
-            GeometryReader { geo in
+        GeometryReader { geo in
             ScrollView(showsIndicators: false) {
                 LazyVGrid(columns: columns, spacing: 10) {
                     ForEach(viewModel.movies) { movie in
@@ -36,17 +34,10 @@ struct DiscoverView: View {
                 .padding(10)
                 Spacer()
             }
+        }.navigationTitle(viewModel.categoryName)
+            .navigationBarTitleDisplayMode(.inline)
+            .onAppear {
+                viewModel.getMovies()
             }
-            .navigationTitle("Discover")
-        }
-        .onAppear {
-            viewModel.getPopularMovies()
-        }
-    }
-}
-
-struct DiscoverView_Previews: PreviewProvider {
-    static var previews: some View {
-        DiscoverView()
     }
 }

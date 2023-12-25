@@ -88,6 +88,7 @@ struct MovieDetailView: View {
             }
         }.background(
             AsyncImage(url: URL(string: viewModel.imageUrl)).blur(radius: 40))
+        .navigationBarTitleDisplayMode(.large)
         .onAppear {
             viewModel.getCast(movieId: viewModel.id)
             viewModel.isFavorite = viewModel.checkIsFavorite(movies: favoriteMovies)
