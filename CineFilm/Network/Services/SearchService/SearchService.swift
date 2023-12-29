@@ -7,7 +7,11 @@
 
 import Alamofire
 
-final class SearchService: BaseService {
+protocol SearchServiceProtocol {
+    func getSearchedMovies(request: SearchRequest, completion:@escaping (Result<PopularMovies, AFError>) -> Void)
+}
+
+final class SearchService: BaseService, SearchServiceProtocol {
 
     func getSearchedMovies(request: SearchRequest, completion:@escaping (Result<PopularMovies, AFError>) -> Void) {
         self.performRequest(request: request, completion: completion)

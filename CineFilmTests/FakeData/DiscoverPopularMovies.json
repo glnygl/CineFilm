@@ -1,0 +1,406 @@
+{
+  "page": 1,
+  "results": [
+    {
+      "adult": false,
+      "backdrop_path": "/5a4JdoFwll5DRtKMe7JLuGQ9yJm.jpg",
+      "genre_ids": [
+        18,
+        878,
+        28
+      ],
+      "id": 695721,
+      "original_language": "en",
+      "original_title": "The Hunger Games: The Ballad of Songbirds & Snakes",
+      "overview": "64 years before he becomes the tyrannical president of Panem, Coriolanus Snow sees a chance for a change in fortunes when he mentors Lucy Gray Baird, the female tribute from District 12.",
+      "popularity": 2790.356,
+      "poster_path": "/mBaXZ95R2OxueZhvQbcEWy2DqyO.jpg",
+      "release_date": "2023-11-15",
+      "title": "The Hunger Games: The Ballad of Songbirds & Snakes",
+      "video": false,
+      "vote_average": 7.226,
+      "vote_count": 1115
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/sRLC052ieEzkQs9dEtPMfFxYkej.jpg",
+      "genre_ids": [
+        878,
+        28,
+        12
+      ],
+      "id": 848326,
+      "original_language": "en",
+      "original_title": "Rebel Moon - Part One: A Child of Fire",
+      "overview": "When a peaceful colony on the edge of the galaxy finds itself threatened by the armies of the tyrannical Regent Balisarius, they dispatch Kora, a young woman with a mysterious past, to seek out warriors from neighboring planets to help them take a stand.",
+      "popularity": 1810.823,
+      "poster_path": "/ui4DrH1cKk2vkHshcUcGt2lKxCm.jpg",
+      "release_date": "2023-12-15",
+      "title": "Rebel Moon - Part One: A Child of Fire",
+      "video": false,
+      "vote_average": 6.471,
+      "vote_count": 612
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/jXJxMcVoEuXzym3vFnjqDW4ifo6.jpg",
+      "genre_ids": [
+        28,
+        12,
+        14
+      ],
+      "id": 572802,
+      "original_language": "en",
+      "original_title": "Aquaman and the Lost Kingdom",
+      "overview": "Black Manta, still driven by the need to avenge his father's death and wielding the power of the mythic Black Trident, will stop at nothing to take Aquaman down once and for all. To defeat him, Aquaman must turn to his imprisoned brother Orm, the former King of Atlantis, to forge an unlikely alliance in order to save the world from irreversible destruction.",
+      "popularity": 1785.691,
+      "poster_path": "/8xV47NDrjdZDpkVcCFqkdHa3T0C.jpg",
+      "release_date": "2023-12-20",
+      "title": "Aquaman and the Lost Kingdom",
+      "video": false,
+      "vote_average": 6.539,
+      "vote_count": 233
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/gg4zZoTggZmpAQ32qIrP5dtnkEZ.jpg",
+      "genre_ids": [
+        28,
+        80
+      ],
+      "id": 891699,
+      "original_language": "en",
+      "original_title": "Silent Night",
+      "overview": "A tormented father witnesses his young son die when caught in a gang's crossfire on Christmas Eve. While recovering from a wound that costs him his voice, he makes vengeance his life's mission and embarks on a punishing training regimen in order to avenge his son's death.",
+      "popularity": 1653.27,
+      "poster_path": "/tlcuhdNMKNGEVpGqBZrAaOOf1A6.jpg",
+      "release_date": "2023-11-30",
+      "title": "Silent Night",
+      "video": false,
+      "vote_average": 5.843,
+      "vote_count": 153
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/r9bIkU9nXZUWSlDUgDMUcDrlK0A.jpg",
+      "genre_ids": [
+        28,
+        35
+      ],
+      "id": 1029575,
+      "original_language": "en",
+      "original_title": "The Family Plan",
+      "overview": "Dan Morgan is many things: a devoted husband, a loving father, a celebrated car salesman. He's also a former assassin. And when his past catches up to his present, he's forced to take his unsuspecting family on a road trip unlike any other.",
+      "popularity": 1453.937,
+      "poster_path": "/jLLtx3nTRSLGPAKl4RoIv1FbEBr.jpg",
+      "release_date": "2023-12-14",
+      "title": "The Family Plan",
+      "video": false,
+      "vote_average": 7.384,
+      "vote_count": 415
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/yOm993lsJyPmBodlYjgpPwBjXP9.jpg",
+      "genre_ids": [
+        35,
+        10751,
+        14
+      ],
+      "id": 787699,
+      "original_language": "en",
+      "original_title": "Wonka",
+      "overview": "Willy Wonka – chock-full of ideas and determined to change the world one delectable bite at a time – is proof that the best things in life begin with a dream, and if you’re lucky enough to meet Willy Wonka, anything is possible.",
+      "popularity": 1111.281,
+      "poster_path": "/qhb1qOilapbapxWQn9jtRCMwXJF.jpg",
+      "release_date": "2023-12-06",
+      "title": "Wonka",
+      "video": false,
+      "vote_average": 7.163,
+      "vote_count": 624
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/ktHEdqmMWC1wdfPRMRCTZe2OISL.jpg",
+      "genre_ids": [
+        27,
+        53,
+        9648
+      ],
+      "id": 1071215,
+      "original_language": "en",
+      "original_title": "Thanksgiving",
+      "overview": "After a Black Friday riot ends in tragedy, a mysterious Thanksgiving-inspired killer terrorizes Plymouth, Massachusetts - the birthplace of the holiday. Picking off residents one by one, what begins as random revenge killings are soon revealed to be part of a larger, sinister holiday plan.",
+      "popularity": 956.355,
+      "poster_path": "/f5f3TEVst1nHHyqgn7Z3tlwnBIH.jpg",
+      "release_date": "2023-11-16",
+      "title": "Thanksgiving",
+      "video": false,
+      "vote_average": 6.7,
+      "vote_count": 313
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/fm6KqXpk3M2HVveHwCrBSSBaO0V.jpg",
+      "genre_ids": [
+        18,
+        36
+      ],
+      "id": 872585,
+      "original_language": "en",
+      "original_title": "Oppenheimer",
+      "overview": "The story of J. Robert Oppenheimer's role in the development of the atomic bomb during World War II.",
+      "popularity": 730.386,
+      "poster_path": "/8Gxv8gSFCU0XGDykEGv7zR1n2ua.jpg",
+      "release_date": "2023-07-19",
+      "title": "Oppenheimer",
+      "video": false,
+      "vote_average": 8.124,
+      "vote_count": 5655
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/1X7vow16X7CnCoexXh4H4F2yDJv.jpg",
+      "genre_ids": [
+        80,
+        18,
+        36
+      ],
+      "id": 466420,
+      "original_language": "en",
+      "original_title": "Killers of the Flower Moon",
+      "overview": "When oil is discovered in 1920s Oklahoma under Osage Nation land, the Osage people are murdered one by one—until the FBI steps in to unravel the mystery.",
+      "popularity": 694.277,
+      "poster_path": "/dB6Krk806zeqd0YNp2ngQ9zXteH.jpg",
+      "release_date": "2023-10-18",
+      "title": "Killers of the Flower Moon",
+      "video": false,
+      "vote_average": 7.549,
+      "vote_count": 1622
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/zIYROrkHJPYB3VTiW1L9QVgaQO.jpg",
+      "genre_ids": [
+        28,
+        35
+      ],
+      "id": 897087,
+      "original_language": "en",
+      "original_title": "Freelance",
+      "overview": "An ex-special forces operative takes a job to provide security for a journalist as she interviews a dictator, but a military coup breaks out in the middle of the interview, they are forced to escape into the jungle where they must survive.",
+      "popularity": 664.837,
+      "poster_path": "/7Bd4EUOqQDKZXA6Od5gkfzRNb0.jpg",
+      "release_date": "2023-10-05",
+      "title": "Freelance",
+      "video": false,
+      "vote_average": 6.484,
+      "vote_count": 378
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/10jSAS2BMD8mu94Hj7MbO1ti3ZN.jpg",
+      "genre_ids": [
+        18,
+        35,
+        53
+      ],
+      "id": 930564,
+      "original_language": "en",
+      "original_title": "Saltburn",
+      "overview": "Struggling to find his place at Oxford University, student Oliver Quick finds himself drawn into the world of the charming and aristocratic Felix Catton, who invites him to Saltburn, his eccentric family's sprawling estate, for a summer never to be forgotten.",
+      "popularity": 653.944,
+      "poster_path": "/qjhahNLSZ705B5JP92YMEYPocPz.jpg",
+      "release_date": "2023-11-16",
+      "title": "Saltburn",
+      "video": false,
+      "vote_average": 7.155,
+      "vote_count": 322
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/9jPoyxjiEYPylUIMI3Ntixf8z3M.jpg",
+      "genre_ids": [
+        16,
+        12,
+        35,
+        10751
+      ],
+      "id": 520758,
+      "original_language": "en",
+      "original_title": "Chicken Run: Dawn of the Nugget",
+      "overview": "A band of fearless chickens flock together to save poultry-kind from an unsettling new threat: a nearby farm that's cooking up something suspicious.",
+      "popularity": 635.621,
+      "poster_path": "/exNtEY8QUuQh9e23wSQjkPxKIU3.jpg",
+      "release_date": "2023-12-08",
+      "title": "Chicken Run: Dawn of the Nugget",
+      "video": false,
+      "vote_average": 7.435,
+      "vote_count": 299
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/4XM8DUTQb3lhLemJC51Jx4a2EuA.jpg",
+      "genre_ids": [
+        28,
+        80,
+        53
+      ],
+      "id": 385687,
+      "original_language": "en",
+      "original_title": "Fast X",
+      "overview": "Over many missions and against impossible odds, Dom Toretto and his family have outsmarted, out-nerved and outdriven every foe in their path. Now, they confront the most lethal opponent they've ever faced: A terrifying threat emerging from the shadows of the past who's fueled by blood revenge, and who is determined to shatter this family and destroy everything—and everyone—that Dom loves, forever.",
+      "popularity": 616.025,
+      "poster_path": "/fiVW06jE7z9YnO4trhaMEdclSiC.jpg",
+      "release_date": "2023-05-17",
+      "title": "Fast X",
+      "video": false,
+      "vote_average": 7.193,
+      "vote_count": 4547
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/kjQBrc00fB2RjHZB3PGR4w9ibpz.jpg",
+      "genre_ids": [
+        28,
+        12,
+        18
+      ],
+      "id": 670292,
+      "original_language": "en",
+      "original_title": "The Creator",
+      "overview": "Amid a future war between the human race and the forces of artificial intelligence, a hardened ex-special forces agent grieving the disappearance of his wife, is recruited to hunt down and kill the Creator, the elusive architect of advanced AI who has developed a mysterious weapon with the power to end the war—and mankind itself.",
+      "popularity": 605.349,
+      "poster_path": "/vBZ0qvaRxqEhZwl6LWmruJqWE8Z.jpg",
+      "release_date": "2023-09-27",
+      "title": "The Creator",
+      "video": false,
+      "vote_average": 7.145,
+      "vote_count": 1612
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/k1KrbaCMACQiq7EA0Yhw3bdzMv7.jpg",
+      "genre_ids": [
+        16,
+        10751,
+        10402,
+        14,
+        35
+      ],
+      "id": 901362,
+      "original_language": "en",
+      "original_title": "Trolls Band Together",
+      "overview": "When Branch's brother, Floyd, is kidnapped for his musical talents by a pair of nefarious pop-star villains, Branch and Poppy embark on a harrowing and emotional journey to reunite the other brothers and rescue Floyd from a fate even worse than pop-culture obscurity.",
+      "popularity": 600.152,
+      "poster_path": "/bkpPTZUdq31UGDovmszsg2CchiI.jpg",
+      "release_date": "2023-10-12",
+      "title": "Trolls Band Together",
+      "video": false,
+      "vote_average": 7.2,
+      "vote_count": 421
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/gvNmnvu13TPAewP54hvCyuHwNwR.jpg",
+      "genre_ids": [
+        28,
+        27,
+        878
+      ],
+      "id": 920081,
+      "original_language": "en",
+      "original_title": "Megaboa",
+      "overview": "On a trip to Colombia, a group of college students encounter a fifty-foot boa constrictor, hungry for blood.",
+      "popularity": 599.011,
+      "poster_path": "/sAnAMv3eyQiGI1z2k8NsvH0Y6r5.jpg",
+      "release_date": "2021-11-26",
+      "title": "Megaboa",
+      "video": false,
+      "vote_average": 6.5,
+      "vote_count": 442
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/t5zCBSB5xMDKcDqe91qahCOUYVV.jpg",
+      "genre_ids": [
+        27,
+        9648
+      ],
+      "id": 507089,
+      "original_language": "en",
+      "original_title": "Five Nights at Freddy's",
+      "overview": "Recently fired and desperate for work, a troubled young man named Mike agrees to take a position as a night security guard at an abandoned theme restaurant: Freddy Fazbear's Pizzeria. But he soon discovers that nothing at Freddy's is what it seems.",
+      "popularity": 564.166,
+      "poster_path": "/7BpNtNfxuocYEVREzVMO75hso1l.jpg",
+      "release_date": "2023-10-25",
+      "title": "Five Nights at Freddy's",
+      "video": false,
+      "vote_average": 7.802,
+      "vote_count": 2964
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/9PqD3wSIjntyJDBzMNuxuKHwpUD.jpg",
+      "genre_ids": [
+        16,
+        35,
+        10751
+      ],
+      "id": 1075794,
+      "original_language": "en",
+      "original_title": "Leo",
+      "overview": "Jaded 74-year-old lizard Leo has been stuck in the same Florida classroom for decades with his terrarium-mate turtle. When he learns he only has one year left to live, he plans to escape to experience life on the outside but instead gets caught up in the problems of his anxious students — including an impossibly mean substitute teacher.",
+      "popularity": 532.794,
+      "poster_path": "/pD6sL4vntUOXHmuvJPPZAgvyfd9.jpg",
+      "release_date": "2023-11-17",
+      "title": "Leo",
+      "video": false,
+      "vote_average": 7.575,
+      "vote_count": 680
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/5lWIYxYEqWi8j3ZloxXntw3ImBo.jpg",
+      "genre_ids": [
+        16,
+        10751,
+        35,
+        14
+      ],
+      "id": 360920,
+      "original_language": "en",
+      "original_title": "The Grinch",
+      "overview": "The Grinch hatches a scheme to ruin Christmas when the residents of Whoville plan their annual holiday celebration.",
+      "popularity": 518.968,
+      "poster_path": "/1Bc9VNd9CIHIyJtPKFqSQzrXWru.jpg",
+      "release_date": "2018-11-08",
+      "title": "The Grinch",
+      "video": false,
+      "vote_average": 6.847,
+      "vote_count": 3606
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/sy0vo1cmpKqwPRiMUiJ45jyLsX7.jpg",
+      "genre_ids": [
+        10751,
+        35,
+        14
+      ],
+      "id": 8871,
+      "original_language": "en",
+      "original_title": "How the Grinch Stole Christmas",
+      "overview": "The Grinch decides to rob Whoville of Christmas - but a dash of kindness from little Cindy Lou Who and her family may be enough to melt his heart...",
+      "popularity": 489.391,
+      "poster_path": "/AmUs3hximCKa90sHuIRr5Bz8ci5.jpg",
+      "release_date": "2000-11-17",
+      "title": "How the Grinch Stole Christmas",
+      "video": false,
+      "vote_average": 6.767,
+      "vote_count": 6978
+    }
+  ],
+  "total_pages": 41997,
+  "total_results": 839937
+}

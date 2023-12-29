@@ -7,8 +7,12 @@
 
 import Alamofire
 
-class BaseService {
-    func performRequest<T:Decodable>(request: BaseRequest, loadingEnable: Bool = true, completion:@escaping (Result<T, AFError>) -> Void) {
+protocol BaseServiceProtocol {
+    func performRequest<T:Decodable>(request: BaseRequest, completion:@escaping (Result<T, AFError>) -> Void)
+}
+
+class BaseService: BaseServiceProtocol {
+    func performRequest<T:Decodable>(request: BaseRequest, completion:@escaping (Result<T, AFError>) -> Void) {
         if request.blocks {
             //loading
         }

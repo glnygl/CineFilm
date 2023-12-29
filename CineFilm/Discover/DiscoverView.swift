@@ -9,7 +9,7 @@ import SwiftUI
 
 struct DiscoverView: View {
     
-    @StateObject var viewModel = DiscoverViewModel()
+    @StateObject var viewModel = DiscoverViewModel(service: DiscoverService())
     
     let columns = [
           GridItem(.flexible(), spacing: 10),
@@ -40,7 +40,7 @@ struct DiscoverView: View {
             .navigationTitle("Discover")
         }
         .onAppear {
-            viewModel.getPopularMovies()
+            viewModel.getPopularMovies{}
         }
     }
 }

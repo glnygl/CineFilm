@@ -7,7 +7,11 @@
 
 import Alamofire
 
-final class CastService: BaseService {
+protocol CastServiceProtocol {
+    func getCast(request: CastRequest, completion:@escaping (Result<CastResponse, AFError>) -> Void)
+}
+
+final class CastService: BaseService, CastServiceProtocol {
     
     func getCast(request: CastRequest, completion:@escaping (Result<CastResponse, AFError>) -> Void) {
         self.performRequest(request: request, completion: completion)

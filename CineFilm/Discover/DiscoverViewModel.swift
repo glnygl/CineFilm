@@ -11,19 +11,26 @@ final class DiscoverViewModel: ObservableObject {
     
     @Published var movies: [PopularMovie] = []
     var isDiscoverLoaded = false
+    var service: DiscoverServiceProtocol
     
-    func getPopularMovies() {
+    init(service: DiscoverServiceProtocol) {
+        self.service = service
+    }
+    
+    func getPopularMovies(completion: @escaping () -> Void) {
         if isDiscoverLoaded { return }
         let params = DiscoverRequestParams(page: 1)
         let request = DiscoverRequest(params: params)
         
-        DiscoverService().getPopularMovies(request: request) { [weak self] response in
+        service.getPopularMovies(request: request) { [weak self] response in
             switch response {
             case .success(let result):
                 self?.movies = result.results
                 self?.isDiscoverLoaded = true
+                completion()
             case .failure(let error):
                 print("\(error.localizedDescription)")
+                completion()
             }
         }
     }    
