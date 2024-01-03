@@ -10,8 +10,19 @@ import Alamofire
 @testable import CineFilm
 
 class DiscoverMockService: DiscoverServiceProtocol, Mockable {
+    
+    private var shouldSucceed: Bool
+    
+    init(shouldSucceed: Bool = true) {
+        self.shouldSucceed = shouldSucceed
+    }
+    
     func getPopularMovies(request: CineFilm.DiscoverRequest, completion: @escaping (Result<CineFilm.PopularMovies, Alamofire.AFError>) -> Void) {
-        let data = loadJson(fileName: "DiscoverPopularMovies", type: PopularMovies.self)
-        completion(.success(data))
+        if shouldSucceed {
+            let data = loadJson(fileName: "PopularMoviesFakeData", type: PopularMovies.self)
+            completion(.success(data))
+        } else {
+            completion(.failure(.responseSerializationFailed(reason: .decodingFailed(error: AppError.getPopularMoviesFailed))))
+        }
     }
 }

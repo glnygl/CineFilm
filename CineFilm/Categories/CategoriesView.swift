@@ -9,13 +9,13 @@ import SwiftUI
 
 struct CategoriesView: View {
     
-    @StateObject var viewModel = CategoriesViewModel()
+    @StateObject var viewModel = CategoriesViewModel(service: CategoriesService())
     
     var body: some View {
         NavigationView {
             List(viewModel.categories) { category in
                 NavigationLink {
-                    CategoryView(viewModel: CategoryViewModel(categoryId: category.id, categoryName: category.name))
+                    CategoryView(viewModel: CategoryViewModel(service: DiscoverService(), categoryId: category.id, categoryName: category.name))
                         .modifier(BaseView())
                 } label: {
                     CategoryRowView(category: category)
@@ -30,7 +30,7 @@ struct CategoriesView: View {
             .scrollIndicators(.hidden)
         }
         .onAppear {
-            viewModel.getCategories()
+            viewModel.getCategories(){ _ in }
         }
     }
 }

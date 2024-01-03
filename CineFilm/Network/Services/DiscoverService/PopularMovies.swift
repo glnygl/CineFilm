@@ -30,8 +30,3 @@ struct PopularMovie: Codable, Identifiable {
         case genres = "genre_ids"
     }
 }
-
-struct DenemeModel: Codable {
-    let id: Int
-    let name: String
-}

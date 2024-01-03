@@ -13,8 +13,10 @@ final class CategoryViewModel: ObservableObject {
     private var isCategoryLoaded = false
     private var categoryId: Int
     var categoryName: String
+    var service: DiscoverServiceProtocol
     
-    init(categoryId: Int, categoryName: String) {
+    init(service: DiscoverServiceProtocol, categoryId: Int, categoryName: String) {
+        self.service = service
         self.categoryId = categoryId
         self.categoryName = categoryName
     }
@@ -24,7 +26,7 @@ final class CategoryViewModel: ObservableObject {
         let params = DiscoverRequestParams(page: 1, genre: String(categoryId))
         let request = DiscoverRequest(params: params)
         
-        DiscoverService().getPopularMovies(request: request) { [weak self] response in
+        service.getPopularMovies(request: request) { [weak self] response in
             switch response {
             case .success(let result):
                 self?.movies = result.results

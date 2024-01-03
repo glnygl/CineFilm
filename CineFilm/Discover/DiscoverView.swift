@@ -40,7 +40,7 @@ struct DiscoverView: View {
             .navigationTitle("Discover")
         }
         .onAppear {
-            viewModel.getPopularMovies{}
+            viewModel.getPopularMovies{ _ in }
         }
     }
 }

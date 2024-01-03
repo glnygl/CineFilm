@@ -11,18 +11,24 @@ final class CategoriesViewModel: ObservableObject {
     
     @Published var categories: [Category] = []
     var isCategoriesLoaded = false
+    var service: CategoriesServiceProtocol
     
-    func getCategories() {
+    init(service: CategoriesServiceProtocol) {
+        self.service = service
+    }
+    
+    func getCategories(completion: @escaping (Result<Categories, Error>) -> Void) {
         if isCategoriesLoaded { return }
         let request = CategoriesRequest(params: CategoriesRequestParams())
         
-        CategoriesService().getCategories(request: request) { [weak self] response in
+        service.getCategories(request: request) { [weak self] response in
             switch response {
             case .success(let result):
                 self?.categories = result.genres
                 self?.isCategoriesLoaded = true
+                completion(.success(result))
             case .failure(let error):
-                print("\(error.localizedDescription)")
+                completion(.failure(error))
             }
         }
     }

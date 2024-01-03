@@ -17,7 +17,7 @@ final class DiscoverViewModel: ObservableObject {
         self.service = service
     }
     
-    func getPopularMovies(completion: @escaping () -> Void) {
+    func getPopularMovies(completion: @escaping (Result<PopularMovies, Error>) -> Void) {
         if isDiscoverLoaded { return }
         let params = DiscoverRequestParams(page: 1)
         let request = DiscoverRequest(params: params)
@@ -27,10 +27,9 @@ final class DiscoverViewModel: ObservableObject {
             case .success(let result):
                 self?.movies = result.results
                 self?.isDiscoverLoaded = true
-                completion()
+                completion(.success(result))
             case .failure(let error):
-                print("\(error.localizedDescription)")
-                completion()
+                completion(.failure(error))
             }
         }
     }    
