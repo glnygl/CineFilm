@@ -11,7 +11,7 @@ final class DiscoverViewModel: ObservableObject {
     
     @Published var movies: [PopularMovie] = []
     var isDiscoverLoaded = false
-    var service: DiscoverServiceProtocol
+    private var service: DiscoverServiceProtocol
     
     init(service: DiscoverServiceProtocol) {
         self.service = service

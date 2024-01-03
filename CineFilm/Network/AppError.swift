@@ -11,4 +11,5 @@ import Alamofire
 enum AppError: Error {
     case getPopularMoviesFailed
     case getCategoriesFailed
+    case getCastFailed
 }

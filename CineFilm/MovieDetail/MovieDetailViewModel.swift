@@ -11,10 +11,12 @@ final class MovieDetailViewModel: ObservableObject {
     
     var movie: PopularMovie?
     @Published var cast: [Cast] = []
-    private var isCastLoaded = false
     @Published var isFavorite = false
+    var isCastLoaded = false
+    private var service: CastServiceProtocol
     
-    init(movie: PopularMovie) {
+    init(service: CastServiceProtocol, movie: PopularMovie) {
+        self.service = service
         self.movie = movie
     }
     
@@ -27,7 +29,7 @@ final class MovieDetailViewModel: ObservableObject {
     }
     
     var releaseDate: String {
-        movie?.relaseDate.format() ?? ""
+        movie?.relaseDate.formatDateString() ?? ""
     }
     
     var overview: String {
@@ -59,17 +61,18 @@ final class MovieDetailViewModel: ObservableObject {
         setMovieData()
     }
     
-    func getCast(movieId: Int) {
+    func getCast(movieId: Int, completion: @escaping (Result<CastResponse, Error>) -> Void) {
         if isCastLoaded { return }
         let request = CastRequest(movieId: movieId)
         
-        CastService().getCast(request: request) { [weak self] response in
+        service.getCast(request: request) { [weak self] response in
             switch response {
             case .success(let result):
                 self?.cast = result.cast
                 self?.isCastLoaded = true
+                completion(.success(result))
             case .failure(let error):
-                print("\(error.localizedDescription)")
+                completion(.failure(error))
             }
         }
     }

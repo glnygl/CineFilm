@@ -34,9 +34,3 @@ struct CategoriesView: View {
         }
     }
 }
-
-struct CategoriesView_Previews: PreviewProvider {
-    static var previews: some View {
-        CategoriesView()
-    }
-}

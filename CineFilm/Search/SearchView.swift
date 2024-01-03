@@ -29,7 +29,7 @@ struct SearchView: View {
                             .clipShape(Circle())
                         Text(movie.title)
                         NavigationLink {
-                            MovieDetailView(viewModel: MovieDetailViewModel(movie: movie))
+                            MovieDetailView(viewModel: MovieDetailViewModel(service: CastService(), movie: movie))
                                 .modifier(BaseView())
                         } label: {}
                     }
@@ -43,15 +43,4 @@ struct SearchView: View {
             .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
     }
-    
-    private func printgg(keyword: String) {
-        print("g")
-    }
 }
-
-struct SearchView_Previews: PreviewProvider {
-    static var previews: some View {
-        SearchView()
-    }
-}
-

@@ -27,10 +27,10 @@ struct FavoritesView: View {
                     ForEach(favoriteMovies) { favoriteMovie in
                         let movie = viewModel.getMovieModel(favoriteMovie: favoriteMovie)
                         NavigationLink {                            
-                            MovieDetailView(viewModel: MovieDetailViewModel(movie: movie))
+                            MovieDetailView(viewModel: MovieDetailViewModel(service: CastService(), movie: movie))
                                 .modifier(BaseView())
                         } label: {
-                            DiscoverRowView(viewModel: MovieDetailViewModel(movie: movie))
+                            DiscoverRowView(viewModel: MovieDetailViewModel(service: CastService(), movie: movie))
                                 .frame(width: (geo.size.width - 40) / 3)
                             
                         }

@@ -22,7 +22,7 @@ final class CategoriesViewModelTest: XCTestCase {
         viewModel = nil
     }
     
-    func test_getCategories_Succesfully() {
+    func test_getCategories_fetchSuccesfully() {
         
         // Arrange
         let expectation = XCTestExpectation(description: "Wait for network request")
@@ -39,21 +39,17 @@ final class CategoriesViewModelTest: XCTestCase {
     }
     
     func test_getCategories_alreadyLoaded() {
-        
-        // Arrange
+    
         var sut = 0
         viewModel.isCategoriesLoaded = true
         
-        // Act
         viewModel.getCategories { _ in
             sut += 1
         }
-        
-        // Assert
         XCTAssertTrue(sut == 0)
     }
     
-    func test_getCategories_Failed() {
+    func test_getCategories_shouldThrowError() {
         
         // Arrange
         let expectation = XCTestExpectation(description: "Wait for network request")
@@ -65,7 +61,7 @@ final class CategoriesViewModelTest: XCTestCase {
         viewModel.getCategories { result in
             switch result {
             case .success(_):
-                XCTFail("Should fail")
+                XCTAssertNil(result)
             case .failure(let error):
                 errorDescription = error.localizedDescription
             }

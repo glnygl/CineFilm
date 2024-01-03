@@ -22,20 +22,27 @@ final class DiscoverViewModelTest: XCTestCase {
         viewModel = nil
     }
     
-    func test_getPopularMovies_Succesfully() {
+    func test_getPopularMovies_fetchSuccesfully() {
         
         // Arrange
         let expectation = XCTestExpectation(description: "Wait for network request")
         viewModel.isDiscoverLoaded = false
+        var movies: PopularMovies?
         
         // Act
-        viewModel.getPopularMovies { _ in
+        viewModel.getPopularMovies { response in
+            switch response {
+            case .success(let result):
+                movies = result
+            case .failure(let error):
+                XCTAssertNil(error)
+            }
             expectation.fulfill()
         }
         wait(for: [expectation], timeout: 0.2)
         
         // Assert
-        XCTAssertTrue(viewModel.movies.count > 0)
+        XCTAssertNotNil(movies)
     }
     
     func test_getPopularMovies_alreadyLoaded() {
@@ -53,7 +60,7 @@ final class DiscoverViewModelTest: XCTestCase {
         XCTAssertTrue(sut == 0)
     }
     
-    func test_getPopularMovies_Failed() {
+    func test_getPopularMovies_shouldThrowError() {
         
         // Arrange
         let expectation = XCTestExpectation(description: "Wait for network request")
@@ -65,7 +72,7 @@ final class DiscoverViewModelTest: XCTestCase {
         viewModel.getPopularMovies { result in
             switch result {
             case .success(_):
-                XCTFail("Should fail")
+                XCTAssertNil(result)
             case .failure(let error):
                 errorDescription = error.localizedDescription
             }

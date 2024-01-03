@@ -23,10 +23,10 @@ struct CategoryView: View {
                 LazyVGrid(columns: columns, spacing: 10) {
                     ForEach(viewModel.movies) { movie in
                         NavigationLink {
-                            MovieDetailView(viewModel: MovieDetailViewModel(movie: movie))
+                            MovieDetailView(viewModel: MovieDetailViewModel(service: CastService(), movie: movie))
                                 .modifier(BaseView())
                         } label: {
-                            DiscoverRowView(viewModel: MovieDetailViewModel(movie: movie))
+                            DiscoverRowView(viewModel: MovieDetailViewModel(service: CastService(), movie: movie))
                                 .frame(width: (geo.size.width - 40) / 3)
                         }
                     }

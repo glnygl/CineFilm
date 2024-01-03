@@ -13,7 +13,7 @@ final class CategoryViewModel: ObservableObject {
     private var isCategoryLoaded = false
     private var categoryId: Int
     var categoryName: String
-    var service: DiscoverServiceProtocol
+    private var service: DiscoverServiceProtocol
     
     init(service: DiscoverServiceProtocol, categoryId: Int, categoryName: String) {
         self.service = service

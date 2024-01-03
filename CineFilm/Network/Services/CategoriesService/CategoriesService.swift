@@ -8,12 +8,11 @@
 import Alamofire
 
 protocol CategoriesServiceProtocol {
-    func getCategories(request: CategoriesRequest, completion:@escaping (Result<Categories, AFError>) -> Void)
+    func getCategories(request: CategoriesRequest, completion: @escaping (Result<Categories, AFError>) -> Void)
 }
 
 final class CategoriesService: BaseService, CategoriesServiceProtocol {
-    
-    func getCategories(request: CategoriesRequest, completion:@escaping (Result<Categories, AFError>) -> Void) {
+    func getCategories(request: CategoriesRequest, completion: @escaping (Result<Categories, AFError>) -> Void) {
         self.performRequest(request: request, completion: completion)
     }
 }

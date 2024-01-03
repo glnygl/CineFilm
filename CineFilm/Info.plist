@@ -6,12 +6,5 @@
 	<string>https://api.themoviedb.org/3/</string>
 	<key>ImageURL</key>
 	<string>https://image.tmdb.org/t/p/w500</string>
-	<key>UIApplicationSceneManifest</key>
-	<dict>
-		<key>UIApplicationSupportsMultipleScenes</key>
-		<true/>
-		<key>UISceneConfigurations</key>
-		<dict/>
-	</dict>
 </dict>
 </plist>
