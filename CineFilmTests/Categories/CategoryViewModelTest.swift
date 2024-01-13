@@ -1,20 +1,20 @@
 //
-//  DiscoverViewModelTest.swift
+//  CategoryViewModelTest.swift
 //  CineFilmTests
 //
-//  Created by glnygl on 29.12.2023.
+//  Created by glnygl on 6.01.2024.
 //
 
 import XCTest
 @testable import CineFilm
 
-final class DiscoverViewModelTest: XCTestCase {
+final class CategoryViewModelTest: XCTestCase {
     
-    var viewModel: DiscoverViewModel!
-
+    var viewModel: CategoryViewModel!
+    
     override func setUp() {
         super.setUp()
-        viewModel = DiscoverViewModel(service: DiscoverMockService())
+        viewModel = CategoryViewModel(service: DiscoverMockService(shouldSucceed: true), categoryId: 35, categoryName: "Comedy")
     }
     
     override func tearDown() {
@@ -22,30 +22,40 @@ final class DiscoverViewModelTest: XCTestCase {
         viewModel = nil
     }
     
-    func test_getPopularMovies_fetchSuccesfully() {
+    func test_getMovies_fetchSuccesfully() {
         
         // Arrange
         let expectation = XCTestExpectation(description: "Wait for network request")
-        viewModel.isDiscoverLoaded = false
+        viewModel.isCategoryLoaded = false
+        var movies: PopularMovies?
         
         // Act
-        viewModel.getPopularMovies { _ in
+        viewModel.getMovies { response in
+            switch response {
+            case .success(let result):
+                movies = result
+            case .failure(let error):
+                XCTAssertNil(error)
+            }
             expectation.fulfill()
         }
         wait(for: [expectation], timeout: 0.2)
         
         // Assert
-        XCTAssertNotNil(viewModel.movies)
+        guard let sum = movies?.results.first?.genres else {
+            return XCTFail("Data is empty")
+        }
+        XCTAssertTrue(sum.contains(35))
     }
     
-    func test_getPopularMovies_alreadyLoaded() {
+    func test_getMovies_alreadyLoaded() {
         
         // Arrange
         var sut = 0
-        viewModel.isDiscoverLoaded = true
+        viewModel.isCategoryLoaded = true
         
         // Act
-        viewModel.getPopularMovies { _ in
+        viewModel.getMovies { _ in
             sut += 1
         }
         
@@ -53,20 +63,19 @@ final class DiscoverViewModelTest: XCTestCase {
         XCTAssertTrue(sut == 0)
     }
     
-    func test_getPopularMovies_shouldThrowError() {
+    func test_getMovies_shouldThrowError() {
         
         // Arrange
         let expectation = XCTestExpectation(description: "Wait for network request")
-        viewModel = DiscoverViewModel(service: DiscoverMockService(shouldSucceed: false))
-        viewModel.isDiscoverLoaded = false
+        viewModel = CategoryViewModel(service: DiscoverMockService(shouldSucceed: false), categoryId: 35, categoryName: "Comedy")
+        viewModel.isCategoryLoaded = false
         var errorDescription: String?
         
         // Act
-        viewModel.getPopularMovies { response in
+        viewModel.getMovies { response in
             switch response {
             case .success(_):
                 XCTAssertNil(response)
-                print("")
             case .failure(let error):
                 errorDescription = error.localizedDescription
             }

@@ -10,17 +10,23 @@ import Foundation
 final class SearchViewModel: ObservableObject {
     
     @Published var movies: [PopularMovie] = []
+    private var service: SearchServiceProtocol
     
-    func fetchSearchedMovies(query: String) {
+    init(service: SearchServiceProtocol) {
+        self.service = service
+    }
+    
+    func fetchSearchedMovies(query: String, completion: @escaping (Result<PopularMovies, Error>) -> Void) {
         let params = SearchRequestParams(query: query)
         let request = SearchRequest(params: params)
         
-        SearchService().getSearchedMovies(request: request) { [weak self] response in
+        service.getSearchedMovies(request: request) { [weak self] response in
             switch response {
             case .success(let result):
                 self?.movies = result.results
+                completion(.success(result))
             case .failure(let error):
-                print("\(error.localizedDescription)")
+                completion(.failure(error))
             }
         }   
     }   

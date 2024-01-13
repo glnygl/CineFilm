@@ -37,7 +37,7 @@ struct CategoryView: View {
         }.navigationTitle(viewModel.categoryName)
             .navigationBarTitleDisplayMode(.inline)
             .onAppear {
-                viewModel.getMovies()
+                viewModel.getMovies { _ in }
             }
     }
 }

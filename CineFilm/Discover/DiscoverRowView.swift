@@ -39,9 +39,3 @@ struct DiscoverRowView: View {
             .giveShadow()
     }
 }
-
-struct DiscoverRowView_Previews: PreviewProvider {
-    static var previews: some View {
-        DiscoverRowView()
-    }
-}

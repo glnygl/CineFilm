@@ -1,20 +1,20 @@
 //
-//  DiscoverViewModelTest.swift
+//  SearchViewModelTest.swift
 //  CineFilmTests
 //
-//  Created by glnygl on 29.12.2023.
+//  Created by glnygl on 8.01.2024.
 //
 
 import XCTest
 @testable import CineFilm
 
-final class DiscoverViewModelTest: XCTestCase {
+final class SearchViewModelTest: XCTestCase {
     
-    var viewModel: DiscoverViewModel!
+    var viewModel: SearchViewModel!
 
     override func setUp() {
         super.setUp()
-        viewModel = DiscoverViewModel(service: DiscoverMockService())
+        viewModel = SearchViewModel(service: SearchMockService())
     }
     
     override func tearDown() {
@@ -22,47 +22,35 @@ final class DiscoverViewModelTest: XCTestCase {
         viewModel = nil
     }
     
-    func test_getPopularMovies_fetchSuccesfully() {
+    func test_fetchSearchedMovies_fetchSuccesfully() {
         
         // Arrange
         let expectation = XCTestExpectation(description: "Wait for network request")
-        viewModel.isDiscoverLoaded = false
+        let query = "Wonka"
         
         // Act
-        viewModel.getPopularMovies { _ in
+        viewModel.fetchSearchedMovies(query: query) { _ in
             expectation.fulfill()
         }
+        
         wait(for: [expectation], timeout: 0.2)
         
-        // Assert
-        XCTAssertNotNil(viewModel.movies)
+        let sum = viewModel.movies.first?.title ?? ""
+        
+        //Assert
+        XCTAssertTrue(sum.contains(query))
+        
     }
     
-    func test_getPopularMovies_alreadyLoaded() {
-        
-        // Arrange
-        var sut = 0
-        viewModel.isDiscoverLoaded = true
-        
-        // Act
-        viewModel.getPopularMovies { _ in
-            sut += 1
-        }
-        
-        // Assert
-        XCTAssertTrue(sut == 0)
-    }
-    
-    func test_getPopularMovies_shouldThrowError() {
-        
+    func test_fetchSearchedMovies_throwError() {
+       
         // Arrange
         let expectation = XCTestExpectation(description: "Wait for network request")
-        viewModel = DiscoverViewModel(service: DiscoverMockService(shouldSucceed: false))
-        viewModel.isDiscoverLoaded = false
         var errorDescription: String?
+        let query = "Barbie"
         
         // Act
-        viewModel.getPopularMovies { response in
+        viewModel.fetchSearchedMovies(query: query) { response in
             switch response {
             case .success(_):
                 XCTAssertNil(response)
@@ -72,6 +60,7 @@ final class DiscoverViewModelTest: XCTestCase {
             }
             expectation.fulfill()
         }
+        
         wait(for: [expectation], timeout: 0.2)
         
         // Assert

@@ -10,7 +10,7 @@ import Foundation
 final class CategoryViewModel: ObservableObject {
     
     @Published var movies: [PopularMovie] = []
-    private var isCategoryLoaded = false
+    var isCategoryLoaded = false
     private var categoryId: Int
     var categoryName: String
     private var service: DiscoverServiceProtocol
@@ -21,7 +21,7 @@ final class CategoryViewModel: ObservableObject {
         self.categoryName = categoryName
     }
     
-    func getMovies() {
+    func getMovies(completion: @escaping (Result<PopularMovies, Error>) -> Void) {
         if isCategoryLoaded { return }
         let params = DiscoverRequestParams(page: 1, genre: String(categoryId))
         let request = DiscoverRequest(params: params)
@@ -31,8 +31,9 @@ final class CategoryViewModel: ObservableObject {
             case .success(let result):
                 self?.movies = result.results
                 self?.isCategoryLoaded = true
+                completion(.success(result))
             case .failure(let error):
-                print("\(error.localizedDescription)")
+                completion(.failure(error))
             }
         }
     }

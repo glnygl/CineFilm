@@ -29,9 +29,3 @@ struct RateView: View {
         }
     }
 }
-
-struct RateView_Previews: PreviewProvider {
-    static var previews: some View {
-        RateView(progress: 0.74)
-    }
-}

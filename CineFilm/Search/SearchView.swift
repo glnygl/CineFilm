@@ -10,7 +10,7 @@ import CachedAsyncImage
 
 struct SearchView: View {
     
-    @StateObject var viewModel = SearchViewModel()
+    @StateObject var viewModel = SearchViewModel(service: SearchService())
     @State private var searchText = ""
     
     var body: some View {
@@ -36,7 +36,9 @@ struct SearchView: View {
                 }.searchable(text: $searchText)
                     .disableAutocorrection(true)
                     .onChange(of: searchText) { _ , newQuery in
-                        Task { viewModel.fetchSearchedMovies(query: searchText) }
+                        Task { 
+                            viewModel.fetchSearchedMovies(query: searchText) { _ in }
+                        }
                     }
             }
             .navigationTitle("Search")

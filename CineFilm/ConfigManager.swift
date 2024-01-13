@@ -21,9 +21,11 @@ final class ConfigManager: NSObject {
     
     private func readConfig() {
         if let path = Bundle.main.path(forResource: "Info", ofType: "plist") {
-            if let dict = NSDictionary(contentsOfFile: path) {
-                self.baseURL = dict["BaseURL"] as? String ?? ""
-                self.imageURL = dict["ImageURL"] as? String ?? ""
+            if let dict = NSDictionary(contentsOfFile: path),
+                let baseUrl = dict["BaseURL"] as? String,
+                let imageURL = dict["ImageURL"] as? String  {
+                self.baseURL = baseUrl
+                self.imageURL = imageURL
             }
         }
     }

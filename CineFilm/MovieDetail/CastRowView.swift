@@ -43,9 +43,3 @@ struct CastRowView: View {
         }
     }
 }
-
-struct CastRowView_Previews: PreviewProvider {
-    static var previews: some View {
-        CastRowView(viewModel: CastViewModel(cast: Cast(id: 2, name: "Gal Gadot", character: "Wonder Woman")))
-    }
-}

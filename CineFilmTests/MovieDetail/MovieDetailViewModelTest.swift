@@ -1,5 +1,5 @@
 //
-//  MovieDetailTest.swift
+//  MovieDetailViewModelTest.swift
 //  CineFilmTests
 //
 //  Created by glnygl on 4.01.2024.
@@ -8,7 +8,7 @@
 import XCTest
 @testable import CineFilm
 
-final class MovieDetailTest: XCTestCase {
+final class MovieDetailViewModelTest: XCTestCase {
     
     var viewModel: MovieDetailViewModel!
     var movie: PopularMovie!  // Wonka 787699

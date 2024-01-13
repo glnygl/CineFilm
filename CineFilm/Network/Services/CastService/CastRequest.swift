@@ -9,10 +9,11 @@ import Foundation
 
 final class CastRequest: BaseRequest {
     
-    var movieId: Int
+    var movieId: Int?
+    
     init(movieId: Int) {
-        self.movieId = movieId
         super.init()
+        self.movieId = movieId
         path = String.init(format:  RequestPaths.credits.rawValue, "\(movieId)")
     }
 }

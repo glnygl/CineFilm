@@ -8,8 +8,12 @@
 import Foundation
 
 final class SearchRequest: BaseRequest {
+    
+    var params: SearchRequestParams?
+    
     init(params: SearchRequestParams) {
         super.init()
+        self.params = params
         path = RequestPaths.search.rawValue
         query = Utils.queryString(dictionary: params.dict)
     }

@@ -8,8 +8,12 @@
 import Foundation
 
 final class DiscoverRequest: BaseRequest {
+    
+    var params: DiscoverRequestParams?
+    
     init(params: DiscoverRequestParams) {
         super.init()
+        self.params = params
         path = RequestPaths.discover.rawValue
         query = Utils.queryString(dictionary: params.dict)
     }

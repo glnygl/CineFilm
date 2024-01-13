@@ -58,10 +58,10 @@ final class CategoriesViewModelTest: XCTestCase {
         var errorDescription: String?
         
         // Act
-        viewModel.getCategories { result in
-            switch result {
+        viewModel.getCategories { response in
+            switch response {
             case .success(_):
-                XCTAssertNil(result)
+                XCTAssertNil(response)
             case .failure(let error):
                 errorDescription = error.localizedDescription
             }

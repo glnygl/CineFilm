@@ -12,4 +12,5 @@ enum AppError: Error {
     case getPopularMoviesFailed
     case getCategoriesFailed
     case getCastFailed
+    case searchMoviesFailed
 }

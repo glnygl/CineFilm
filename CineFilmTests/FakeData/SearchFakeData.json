@@ -1,0 +1,105 @@
+{
+  "page": 1,
+  "results": [
+    {
+      "adult": false,
+      "backdrop_path": "/yOm993lsJyPmBodlYjgpPwBjXP9.jpg",
+      "genre_ids": [
+        35,
+        10751,
+        14
+      ],
+      "id": 787699,
+      "original_language": "en",
+      "original_title": "Wonka",
+      "overview": "Willy Wonka – chock-full of ideas and determined to change the world one delectable bite at a time – is proof that the best things in life begin with a dream, and if you’re lucky enough to meet Willy Wonka, anything is possible.",
+      "popularity": 902.407,
+      "poster_path": "/qhb1qOilapbapxWQn9jtRCMwXJF.jpg",
+      "release_date": "2023-12-06",
+      "title": "Wonka",
+      "video": false,
+      "vote_average": 7.104,
+      "vote_count": 888
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/idfNNlVwjVkBQrM2eWpLZiDOTIc.jpg",
+      "genre_ids": [
+        10751,
+        14,
+        35
+      ],
+      "id": 252,
+      "original_language": "en",
+      "original_title": "Willy Wonka & the Chocolate Factory",
+      "overview": "When eccentric candy man Willy Wonka promises a lifetime supply of sweets and a tour of his chocolate factory to five lucky kids, penniless Charlie Bucket seeks the golden ticket that will make him a winner.",
+      "popularity": 141.833,
+      "poster_path": "/vmpsZkrs4Uvkp9r1atL8B3frA63.jpg",
+      "release_date": "1971-06-29",
+      "title": "Willy Wonka & the Chocolate Factory",
+      "video": false,
+      "vote_average": 7.5,
+      "vote_count": 3245
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/oWpE71ORKX5HUZjeS6fM0gOScQ6.jpg",
+      "genre_ids": [
+        99,
+        14
+      ],
+      "id": 413393,
+      "original_language": "en",
+      "original_title": "Pure Imagination: The Story of 'Willy Wonka & the Chocolate Factory'",
+      "overview": "Retrospective documentary on the making of the cult classic \"Willy Wonka & the Chocolate Factory.\"",
+      "popularity": 69.516,
+      "poster_path": "/nxzZeGmE456c5ujVrkV2B42mmD4.jpg",
+      "release_date": "2001-11-13",
+      "title": "Pure Imagination: The Story of 'Willy Wonka & the Chocolate Factory'",
+      "video": false,
+      "vote_average": 6.833,
+      "vote_count": 17
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/gzUvtI4VTjGLua5LZ2Y2eVndr2W.jpg",
+      "genre_ids": [
+        10751,
+        16,
+        12,
+        35
+      ],
+      "id": 455411,
+      "original_language": "en",
+      "original_title": "Tom and Jerry: Willy Wonka and the Chocolate Factory",
+      "overview": "The classic Roald Dahl tale gets a modern twist when Tom and Jerry enter the amazing world of Willy Wonka's Chocolate Factory.",
+      "popularity": 50.009,
+      "poster_path": "/vh5iYhj80l1inSdep61sF8g1S8m.jpg",
+      "release_date": "2017-06-28",
+      "title": "Tom and Jerry: Willy Wonka and the Chocolate Factory",
+      "video": false,
+      "vote_average": 6.6,
+      "vote_count": 118
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/8O4tkDYV3iCyXjWsvTYHTHiHeRl.jpg",
+      "genre_ids": [
+        99
+      ],
+      "id": 626973,
+      "original_language": "cs",
+      "original_title": "Pavel Wonka se zavazuje",
+      "overview": "",
+      "popularity": 8.36,
+      "poster_path": "/AbFQpeeLEHn7QyBQVxF7h5ZMD78.jpg",
+      "release_date": "2014-11-13",
+      "title": "Pavel Wonka Commits to Cooperate",
+      "video": false,
+      "vote_average": 0,
+      "vote_count": 0
+    }
+  ],
+  "total_pages": 1,
+  "total_results": 5
+}
