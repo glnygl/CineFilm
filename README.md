@@ -2,9 +2,10 @@
 
 The Movie DataBase API
 
-* SwiftUI
+* SwiftUI 
 * SwiftData
 * XCUnitTest
+* MVVM
 * Alamofire
 * CocoaPods & Swift Package Manager
 
