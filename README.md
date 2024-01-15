@@ -4,9 +4,9 @@ The Movie DataBase API
 
 * SwiftUI 
 * SwiftData
-* XCUnitTest
 * MVVM
 * Alamofire
+* XCUnitTest
 * CocoaPods & Swift Package Manager
 
 ![](AppScreens.png)
