@@ -1,9 +1,9 @@
 # CineFilm
 
+The Movie DataBase API
+
 * SwiftUI
 * SwiftData
 * UnitTest
-
-- The Movie DataBase API
 
 ![](AppScreens.png)
