@@ -33,7 +33,7 @@ struct GenreList {
     ]
     
     static func getGenre(id: Int) -> String {
-        return (GenreList.genres.filter { $0.id == id }.first?.name) ?? ""
+        return (genres.filter { $0.id == id }.first?.name) ?? ""
     }
 }
 

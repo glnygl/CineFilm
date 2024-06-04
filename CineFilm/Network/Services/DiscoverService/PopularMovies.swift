@@ -29,4 +29,8 @@ struct PopularMovie: Codable, Identifiable {
         case rate = "vote_average"
         case genres = "genre_ids"
     }
+    
+    static func setMovieData(movie: PopularMovie?) -> MovieDataItem {
+        return MovieDataItem(id: movie?.id ?? 0, title: movie?.title ?? "", image: movie?.image ?? "", overview: movie?.overview ?? "", relaseDate: movie?.relaseDate ?? "", rate: movie?.rate ?? 0, genres: movie?.genres ?? [])
+    }
 }

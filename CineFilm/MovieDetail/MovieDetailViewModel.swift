@@ -58,7 +58,7 @@ final class MovieDetailViewModel: ObservableObject {
     }
     
     var favoriteMovie: MovieDataItem {
-        setMovieData()
+        PopularMovie.setMovieData(movie: movie)
     }
     
     func getCast(movieId: Int, completion: @escaping (Result<CastResponse, Error>) -> Void) {
@@ -75,10 +75,6 @@ final class MovieDetailViewModel: ObservableObject {
                 completion(.failure(error))
             }
         }
-    }
-    
-    func setMovieData() -> MovieDataItem {
-        return MovieDataItem(id: movie?.id ?? 0, title: movie?.title ?? "", image: movie?.image ?? "", overview: movie?.overview ?? "", relaseDate: movie?.relaseDate ?? "", rate: movie?.rate ?? 0, genres: movie?.genres ?? [])
     }
     
     func checkIsFavorite(movies: [MovieDataItem]?) -> Bool {
