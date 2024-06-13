@@ -32,5 +32,14 @@ final class DiscoverViewModel: ObservableObject {
                 completion(.failure(error))
             }
         }
-    }    
+    }
+    
+    // withCheckedContinuation
+    func getPopularMovies() async -> Result<PopularMovies, Error> {
+        return await withCheckedContinuation { continuation in
+            getPopularMovies { movies in
+                continuation.resume(returning: movies)
+            }
+        }
+    }
 }

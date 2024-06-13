@@ -40,7 +40,10 @@ struct DiscoverView: View {
             .navigationTitle("Discover")
         }
         .onAppear {
-            viewModel.getPopularMovies{ _ in }
+//            viewModel.getPopularMovies{ _ in }
+        }
+        .task {
+            let _ = await viewModel.getPopularMovies()
         }
     }
 }
