@@ -7,11 +7,12 @@
 
 import Foundation
 
-final class MovieDetailViewModel: ObservableObject {
+@Observable // @Observable Macro
+final class MovieDetailViewModel {
     
     var movie: PopularMovie?
-    @Published var cast: [Cast] = []
-    @Published var isFavorite = false
+    var cast: [Cast] = []
+    var isFavorite = false
     var isCastLoaded = false
     private var service: CastServiceProtocol
     

@@ -7,9 +7,10 @@
 
 import Foundation
 
-final class DiscoverViewModel: ObservableObject {
+@Observable // @Observable Macro
+final class DiscoverViewModel {
     
-    @Published var movies: [PopularMovie] = []
+    var movies: [PopularMovie] = []
     var isDiscoverLoaded = false
     private var service: DiscoverServiceProtocol
     
