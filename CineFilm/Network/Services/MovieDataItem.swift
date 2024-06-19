@@ -9,7 +9,7 @@ import Foundation
 import SwiftData
 
 @Model
-class MovieDataItem {
+class MovieDataItem: Hashable {
     let id: Int
     let title: String
     let image: String?

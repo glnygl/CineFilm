@@ -28,10 +28,7 @@ struct SearchView: View {
                             .background(Color.gray)
                             .clipShape(Circle())
                         Text(movie.title)
-                        NavigationLink {
-                            MovieDetailView(viewModel: MovieDetailViewModel(service: CastService(), movie: movie))
-                                .modifier(BaseView())
-                        } label: {}
+                        NavigationLink(value: movie) {}
                     }
                 }.searchable(text: $searchText)
                     .disableAutocorrection(true)
@@ -41,6 +38,10 @@ struct SearchView: View {
                         }
                     }
             }
+            .navigationDestination(for: PopularMovie.self, destination: { movie in
+                MovieDetailView(viewModel: MovieDetailViewModel(service: CastService(), movie: movie))
+                    .modifier(BaseView())
+            })
             .navigationTitle("Search")
             .frame(maxWidth: .infinity, maxHeight: .infinity)
         }

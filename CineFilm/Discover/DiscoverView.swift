@@ -18,26 +18,24 @@ struct DiscoverView: View {
       ]
     
     var body: some View {
-        
-        NavigationView {
-            GeometryReader { geo in
+        // NavigationStack iOS 16+
+        NavigationStack {
             ScrollView(showsIndicators: false) {
                 LazyVGrid(columns: columns, spacing: 10) {
                     ForEach(viewModel.movies) { movie in
-                        NavigationLink {
-                            MovieDetailView(viewModel: MovieDetailViewModel(service: CastService(), movie: movie))
-                                .modifier(BaseView())
-                        } label: {
+                        NavigationLink(value: movie) {
                             DiscoverRowView(viewModel: MovieDetailViewModel(service: CastService(), movie: movie))
-                                .frame(width: (geo.size.width - 40) / 3)
                         }
                     }
                 }
                 .padding(10)
                 Spacer()
             }
-            }
             .navigationTitle("Discover")
+            .navigationDestination(for: PopularMovie.self) { movie in
+                MovieDetailView(viewModel: MovieDetailViewModel(service: CastService(), movie: movie))
+                    .modifier(BaseView())
+            }
         }
         .onAppear {
 //            viewModel.getPopularMovies{ _ in }

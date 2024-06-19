@@ -11,7 +11,7 @@ struct PopularMovies: Codable {
     let results: [PopularMovie]
 }
 
-struct PopularMovie: Codable, Identifiable {
+struct PopularMovie: Codable, Identifiable, Hashable {
     let id: Int
     let title: String
     let image: String?

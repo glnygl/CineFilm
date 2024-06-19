@@ -11,7 +11,7 @@ struct Categories: Codable {
     let genres: [Category]
 }
 
-struct Category: Codable, Identifiable {
+struct Category: Codable, Identifiable, Hashable {
     let id: Int
     let name: String
 }
