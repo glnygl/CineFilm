@@ -36,6 +36,6 @@ struct DiscoverRowView: View {
             }.background(Color.white)
             RateView(progress: viewModel.shownRate).frame(width: 32, height: 32).position(x: 26, y: 164)
         }.cornerRadius(10)
-            .giveShadow()
+            .giveShadow(color: .gray, radius: 4, x: 2.0, y: 2.0)
     }
 }

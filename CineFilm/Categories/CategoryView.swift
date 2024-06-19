@@ -34,8 +34,9 @@ struct CategoryView: View {
                 .padding(10)
                 Spacer()
             }
-        }.navigationTitle(viewModel.categoryName)
-            .navigationBarTitleDisplayMode(.inline)
+                .navigationBarTitleDisplayMode(.inline)
+        }
+        .navigationTitle(viewModel.categoryName)
             .onAppear {
                 viewModel.getMovies { _ in }
             }

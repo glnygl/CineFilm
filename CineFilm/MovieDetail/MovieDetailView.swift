@@ -65,7 +65,7 @@ struct MovieDetailView: View {
                             ForEach(viewModel.cast) { cast in
                                 CastRowView(viewModel: CastViewModel(cast: cast))
                             }
-                            .frame(height: 200)
+                            .frame(height: 220)
                         }.padding(.horizontal)
                     }
                 }
@@ -86,9 +86,8 @@ struct MovieDetailView: View {
                     }
                 }
             }
-        }.background(
-            AsyncImage(url: URL(string: viewModel.imageUrl)).blur(radius: 40))
-        .navigationBarTitleDisplayMode(.large)
+        }
+        .background(Color(uiColor: UIColor.darkGray))
         .onAppear {
             viewModel.getCast(movieId: viewModel.id) { _ in}
             viewModel.isFavorite = viewModel.checkIsFavorite(movies: favoriteMovies)

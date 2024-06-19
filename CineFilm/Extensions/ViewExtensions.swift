@@ -8,8 +8,8 @@
 import SwiftUI
 
 extension View {
-    func giveShadow() -> some View {
+    func giveShadow(color: Color, radius: CGFloat, x: Double, y: Double) -> some View {
         self
-            .shadow(color: .gray, radius: 4, x: 2.0, y: 2.0)
+            .shadow(color: color, radius: radius, x: x, y: y)
     }
 }

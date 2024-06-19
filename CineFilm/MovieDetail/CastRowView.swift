@@ -27,7 +27,7 @@ struct CastRowView: View {
                         .frame(width: 100, height: 150)
                         .aspectRatio(contentMode: .fit)
                 }
-            )
+            ).giveShadow(color: .white, radius: 4, x: 2.0, y: 2.0)
             VStack (spacing: 2) {
                 Text(viewModel.name)
                     .foregroundColor(.white)
