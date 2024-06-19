@@ -8,8 +8,20 @@
 import SwiftUI
 
 struct BaseView: ViewModifier {
+    @Environment(\.presentationMode) var presentationMode
     func body(content: Content) -> some View {
-         content
-            .toolbarRole(.editor)
-     }
+        content
+            .navigationBarBackButtonHidden(true)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button {
+                        presentationMode.wrappedValue.dismiss()
+                    } label: {
+                        HStack {
+                            Image(systemName: "chevron.backward")
+                        }
+                    }
+                }
+            }
+    }
 }
