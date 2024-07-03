@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Alamofire
 
 @Observable // @Observable Macro
 final class DiscoverViewModel {
@@ -35,12 +36,16 @@ final class DiscoverViewModel {
         }
     }
     
-    // withCheckedContinuation
-    func getPopularMovies() async -> Result<PopularMovies, Error> {
-        return await withCheckedContinuation { continuation in
-            getPopularMovies { movies in
-                continuation.resume(returning: movies)
-            }
+    func getPopularMoviesAsync() async -> Result<PopularMovies, AFError> {
+        let params = DiscoverRequestParams(page: 1)
+        let request = DiscoverRequest(params: params)
+        let result = await service.getPopularMoviesAsync(request: request)
+        switch result {
+        case .success(let movies):
+            self.movies = movies.results
+        case .failure(let error):
+            print(error)
         }
+        return result
     }
 }

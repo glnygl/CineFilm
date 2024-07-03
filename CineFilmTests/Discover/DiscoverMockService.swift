@@ -30,4 +30,18 @@ class DiscoverMockService: DiscoverServiceProtocol, Mockable {
             completion(.failure(.responseSerializationFailed(reason: .decodingFailed(error: AppError.getPopularMoviesFailed))))
         }
     }
+    
+    func getPopularMoviesAsync(request: CineFilm.DiscoverRequest) async -> Result<CineFilm.PopularMovies, Alamofire.AFError> {
+        if shouldSucceed {
+            if request.params?.genre == "35" {
+                let data = loadJson(fileName: "CategoryMoviesFakeData", type: PopularMovies.self)
+                return .success(data)
+            } else {
+                let data = loadJson(fileName: "PopularMoviesFakeData", type: PopularMovies.self)
+                return .success(data)
+            }
+        } else {
+            return .failure(.responseSerializationFailed(reason: .decodingFailed(error: AppError.getPopularMoviesFailed)))
+        }
+    }
 }

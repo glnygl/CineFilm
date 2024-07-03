@@ -9,6 +9,7 @@ import Alamofire
 
 protocol BaseServiceProtocol {
     func performRequest<T:Decodable>(request: BaseRequest, completion:@escaping (Result<T, AFError>) -> Void)
+    func performRequestAsync<T:Decodable>(request: BaseRequest) async -> Result<T, AFError>
 }
 
 class BaseService: BaseServiceProtocol {
@@ -17,5 +18,15 @@ class BaseService: BaseServiceProtocol {
             .responseDecodable (decoder: JSONDecoder()){ (response: DataResponse<T, AFError>) in
                 completion(response.result)
             }
+    }
+    
+    // withCheckedContinuation
+    func performRequestAsync<T:Decodable>(request: BaseRequest) async -> Result<T, AFError> {
+        return await withCheckedContinuation { continuation in
+            AF.request(request)
+                .responseDecodable (decoder: JSONDecoder()){ (response: DataResponse<T, AFError>) in
+                    continuation.resume(returning: response.result)
+                }
+        }
     }
 }
