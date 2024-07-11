@@ -41,7 +41,7 @@ struct DiscoverView: View {
 //            viewModel.getPopularMovies{ _ in }
         }
         .task {
-            let _ = await viewModel.getPopularMoviesAsync()
+            await viewModel.getPopularMoviesAsync()
         }
     }
 }

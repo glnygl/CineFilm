@@ -5,10 +5,11 @@
 //  Created by glnygl on 14.08.2023.
 //
 
-import Foundation
+import Alamofire
 
 final class CategoriesViewModel: ObservableObject {
     
+   // @MainActor for categories
     @Published var categories: [Category] = []
     var isCategoriesLoaded = false
     var service: CategoriesServiceProtocol
@@ -32,4 +33,24 @@ final class CategoriesViewModel: ObservableObject {
             }
         }
     }
+    
+    @discardableResult
+    func getCategories() async -> Result<Categories, AFError> {
+        let request = CategoriesRequest(params: CategoriesRequestParams())
+        let result = await service.getCategoriesAsync(request: request)
+        switch result {
+        case .success(let categories):
+//           // Run on MainActor
+//            await MainActor.run {
+//                self.categories = categories.genres
+//            }
+            DispatchQueue.main.async {
+                self.categories = categories.genres
+            }
+        case .failure(let error):
+            print(error)
+        }
+        return result
+    }
+    
 }

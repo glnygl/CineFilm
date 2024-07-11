@@ -31,7 +31,10 @@ struct CategoriesView: View {
             .scrollIndicators(.hidden)
         }
         .onAppear {
-            viewModel.getCategories(){ _ in }
+            // viewModel.getCategories(){ _ in }
+        }
+        .task {
+            await viewModel.getCategories()
         }
     }
 }

@@ -5,7 +5,6 @@
 //  Created by glnygl on 14.08.2023.
 //
 
-import Foundation
 import Alamofire
 
 @Observable // @Observable Macro
@@ -36,6 +35,7 @@ final class DiscoverViewModel {
         }
     }
     
+    @discardableResult
     func getPopularMoviesAsync() async -> Result<PopularMovies, AFError> {
         let params = DiscoverRequestParams(page: 1)
         let request = DiscoverRequest(params: params)
