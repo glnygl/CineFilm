@@ -91,7 +91,7 @@ final class MovieDetailViewModelTest: XCTestCase {
         var storedMovies: [MovieDataItem] = [storedMovie]
         viewModel.movie = favoriteMovie
         
-        let sum = viewModel.checkIsFavorite(movies: storedMovies)
+        let sum = storedMovies.checkIsFavorite(movieId: favoriteMovie.id)
         
         XCTAssertTrue(sum)
     }
@@ -101,7 +101,7 @@ final class MovieDetailViewModelTest: XCTestCase {
         var storedMovies: [MovieDataItem] = [storedMovie]
         viewModel.movie = movie
         
-        let sum = viewModel.checkIsFavorite(movies: storedMovies)
+        let sum = storedMovies.checkIsFavorite(movieId: movie.id)
         
         XCTAssertFalse(sum)
     }

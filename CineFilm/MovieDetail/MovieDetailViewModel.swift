@@ -77,10 +77,4 @@ final class MovieDetailViewModel {
             }
         }
     }
-    
-    func checkIsFavorite(movies: [MovieDataItem]?) -> Bool {
-        guard let movies = movies else { return false }
-        let ids = movies.map { $0.id }
-        return ids.contains(favoriteMovie.id) ? true : false
-    }
 }

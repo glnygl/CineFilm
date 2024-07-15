@@ -37,4 +37,16 @@ class MovieDataItem: Hashable {
         self.rate = rate
         self.genres = genres
     }
+    
+    func convertToPopularMovie() -> PopularMovie {
+        return PopularMovie(id: self.id, title: self.title, image: self.image, overview: self.overview, relaseDate: self.relaseDate, rate: self.rate, genres: self.genres)
+    }
+}
+
+
+extension Array where Element == MovieDataItem {
+    func checkIsFavorite(movieId: Int) -> Bool {
+        let ids = self.map { $0.id }
+        return ids.contains(movieId) ? true : false
+    }
 }

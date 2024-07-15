@@ -9,7 +9,7 @@ import Foundation
 import Alamofire
 @testable import CineFilm
 
-class CategoriesMockService: CategoriesServiceProtocol, Mockable {   
+class CategoriesMockService: CategoriesServiceProtocol, Mockable {
     
     private var shouldSucceed: Bool
     
@@ -24,6 +24,15 @@ class CategoriesMockService: CategoriesServiceProtocol, Mockable {
             completion(.success(data))
         } else {
             completion(.failure(.responseSerializationFailed(reason: .decodingFailed(error: AppError.getCategoriesFailed))))
+        }
+    }
+    
+    func getCategoriesAsync(request: CineFilm.CategoriesRequest) async -> Result<CineFilm.Categories, Alamofire.AFError> {
+        if shouldSucceed {
+            let data = loadJson(fileName: "CategoriesFakeData", type: Categories.self)
+            return .success(data)
+        } else {
+            return .failure(.responseSerializationFailed(reason: .decodingFailed(error: AppError.getCategoriesFailed)))
         }
     }
 }

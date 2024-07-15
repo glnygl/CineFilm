@@ -9,8 +9,7 @@ import SwiftUI
 import SwiftData
 
 struct FavoritesView: View {
-    
-    @StateObject var viewModel = FavoritesViewModel()
+
     @Query private var favoriteMovies : [MovieDataItem]
     
     let columns = [
@@ -24,9 +23,8 @@ struct FavoritesView: View {
             ScrollView(showsIndicators: false) {
                 LazyVGrid(columns: columns, spacing: 10) {
                     ForEach(favoriteMovies) { favoriteMovie in
-                        let movie = viewModel.getMovieModel(favoriteMovie: favoriteMovie)
                         NavigationLink(value: favoriteMovie) {
-                            DiscoverRowView(viewModel: MovieDetailViewModel(service: CastService(), movie: movie))
+                            DiscoverRowView(viewModel: MovieDetailViewModel(service: CastService(), movie: favoriteMovie.convertToPopularMovie()))
                         }
                     }
                 }
@@ -35,8 +33,7 @@ struct FavoritesView: View {
             }
             .navigationTitle("Favorites")
             .navigationDestination(for: MovieDataItem.self) { favoriteMovie in
-                let movie = viewModel.getMovieModel(favoriteMovie: favoriteMovie)
-                MovieDetailView(viewModel: MovieDetailViewModel(service: CastService(), movie: movie))
+                MovieDetailView(viewModel: MovieDetailViewModel(service: CastService(), movie: favoriteMovie.convertToPopularMovie()))
                     .modifier(BaseView())
             }
         }

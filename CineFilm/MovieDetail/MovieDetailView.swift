@@ -73,7 +73,7 @@ struct MovieDetailView: View {
         }.toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button("", systemImage: viewModel.favoriteImage) {
-                    if viewModel.checkIsFavorite(movies: favoriteMovies) {
+                    if favoriteMovies.checkIsFavorite(movieId: viewModel.favoriteMovie.id) {
                         viewModel.isFavorite = false
                         if let selectedMovie = favoriteMovies.filter({ $0.id == viewModel.favoriteMovie.id}).first {
                             context.delete(selectedMovie)
@@ -90,7 +90,7 @@ struct MovieDetailView: View {
         .background(Color(uiColor: UIColor.darkGray))
         .onAppear {
             viewModel.getCast(movieId: viewModel.id) { _ in}
-            viewModel.isFavorite = viewModel.checkIsFavorite(movies: favoriteMovies)
+            viewModel.isFavorite = favoriteMovies.checkIsFavorite(movieId: viewModel.id)
         }
     }
 }
