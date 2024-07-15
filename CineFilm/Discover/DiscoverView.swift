@@ -9,7 +9,7 @@ import SwiftUI
 
 struct DiscoverView: View {
     
-    var viewModel = DiscoverViewModel(service: DiscoverService())
+    @State var viewModel = DiscoverViewModel(service: DiscoverService())
     
     let columns = [
           GridItem(.flexible(), spacing: 10),

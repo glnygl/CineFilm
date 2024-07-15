@@ -11,7 +11,7 @@ import SwiftData
 
 struct MovieDetailView: View {
     
-    var viewModel: MovieDetailViewModel
+    @State var viewModel: MovieDetailViewModel
     @Environment(\.modelContext) private var context
     @Query private var favoriteMovies : [MovieDataItem]
     
