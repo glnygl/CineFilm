@@ -38,3 +38,7 @@ struct CategoriesView: View {
         }
     }
 }
+
+#Preview {
+    CategoriesView()
+}

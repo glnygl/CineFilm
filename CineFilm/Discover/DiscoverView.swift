@@ -45,3 +45,7 @@ struct DiscoverView: View {
         }
     }
 }
+
+#Preview {
+    DiscoverView()
+}
