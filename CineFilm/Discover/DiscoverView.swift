@@ -34,7 +34,7 @@ struct DiscoverView: View {
             .navigationTitle("Discover")
             .navigationDestination(for: PopularMovie.self) { movie in
                 MovieDetailView(viewModel: MovieDetailViewModel(service: CastService(), movie: movie))
-                    .modifier(BaseView())
+                    .removeNavigationBackButtonTitle()
             }
         }
         .onAppear {

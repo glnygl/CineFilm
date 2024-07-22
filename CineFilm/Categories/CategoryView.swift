@@ -24,7 +24,7 @@ struct CategoryView: View {
                     ForEach(viewModel.movies) { movie in
                         NavigationLink {
                             MovieDetailView(viewModel: MovieDetailViewModel(service: CastService(), movie: movie))
-                                .modifier(BaseView())
+                                .removeNavigationBackButtonTitle()
                         } label: {
                             DiscoverRowView(viewModel: MovieDetailViewModel(service: CastService(), movie: movie))
                                 .frame(width: (geo.size.width - 40) / 3)

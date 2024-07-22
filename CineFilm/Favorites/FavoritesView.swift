@@ -34,7 +34,7 @@ struct FavoritesView: View {
             .navigationTitle("Favorites")
             .navigationDestination(for: MovieDataItem.self) { favoriteMovie in
                 MovieDetailView(viewModel: MovieDetailViewModel(service: CastService(), movie: favoriteMovie.convertToPopularMovie()))
-                    .modifier(BaseView())
+                    .removeNavigationBackButtonTitle()
             }
         }
     }

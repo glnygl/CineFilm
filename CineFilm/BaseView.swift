@@ -25,3 +25,9 @@ struct BaseView: ViewModifier {
             }
     }
 }
+
+extension View {
+    func removeNavigationBackButtonTitle() -> some View {
+        self.modifier(BaseView())
+    }
+}

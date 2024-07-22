@@ -23,7 +23,7 @@ struct CategoriesView: View {
             }
             .navigationDestination(for: Category.self, destination: { category in
                 CategoryView(viewModel: CategoryViewModel(service: DiscoverService(), categoryId: category.id, categoryName: category.name))
-                    .modifier(BaseView())
+                    .removeNavigationBackButtonTitle()
             })
             .environment(\.defaultMinListRowHeight, 60)
             .navigationTitle("Categories")

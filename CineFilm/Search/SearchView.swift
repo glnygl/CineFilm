@@ -40,7 +40,7 @@ struct SearchView: View {
             }
             .navigationDestination(for: PopularMovie.self, destination: { movie in
                 MovieDetailView(viewModel: MovieDetailViewModel(service: CastService(), movie: movie))
-                    .modifier(BaseView())
+                    .removeNavigationBackButtonTitle()
             })
             .navigationTitle("Search")
             .frame(maxWidth: .infinity, maxHeight: .infinity)
