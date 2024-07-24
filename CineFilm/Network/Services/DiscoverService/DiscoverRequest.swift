@@ -9,13 +9,13 @@ import Foundation
 
 final class DiscoverRequest: BaseRequest {
     
-    var params: DiscoverRequestParams?
+    var queryParams: DiscoverRequestParams?
     
-    init(params: DiscoverRequestParams) {
+    init(queryParams: DiscoverRequestParams) {
         super.init()
-        self.params = params
+        self.queryParams = queryParams
         path = RequestPaths.discover.rawValue
-        query = Utils.queryString(dictionary: params.dict)
+        query = Utils.queryString(dictionary: queryParams.dict)
     }
 }
 

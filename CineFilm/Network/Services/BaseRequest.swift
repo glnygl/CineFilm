@@ -37,6 +37,7 @@ class BaseRequest: URLRequestConvertible {
         }
         
         var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = self.method.rawValue
         if let parameters = parameters {
             do {
                 let body = try JSONEncoder().encode(parameters)
@@ -46,7 +47,6 @@ class BaseRequest: URLRequestConvertible {
             }
         }
         urlRequest.allHTTPHeaderFields = headers
-        
         return urlRequest
     }
 }

@@ -9,13 +9,13 @@ import Foundation
 
 final class SearchRequest: BaseRequest {
     
-    var params: SearchRequestParams?
+    var queryParams: SearchRequestParams?
     
-    init(params: SearchRequestParams) {
+    init(queryParams: SearchRequestParams) {
         super.init()
-        self.params = params
+        self.queryParams = queryParams
         path = RequestPaths.search.rawValue
-        query = Utils.queryString(dictionary: params.dict)
+        query = Utils.queryString(dictionary: queryParams.dict)
     }
 }
 

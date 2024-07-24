@@ -9,13 +9,13 @@ import Foundation
 
 final class CategoriesRequest: BaseRequest {
     
-    var params: CategoriesRequestParams?
+    var queryParams: CategoriesRequestParams?
     
-    init(params: CategoriesRequestParams) {
+    init(queryParams: CategoriesRequestParams) {
         super.init()
-        self.params = params
+        self.queryParams = queryParams
         path = RequestPaths.categories.rawValue
-        query = Utils.queryString(dictionary: params.dict)
+        query = Utils.queryString(dictionary: queryParams.dict)
     }
 }
 

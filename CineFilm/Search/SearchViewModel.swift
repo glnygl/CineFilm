@@ -18,7 +18,7 @@ final class SearchViewModel: ObservableObject {
     
     func fetchSearchedMovies(query: String, completion: @escaping (Result<PopularMovies, Error>) -> Void) {
         let params = SearchRequestParams(query: query)
-        let request = SearchRequest(params: params)
+        let request = SearchRequest(queryParams: params)
         
         service.getSearchedMovies(request: request) { [weak self] response in
             switch response {

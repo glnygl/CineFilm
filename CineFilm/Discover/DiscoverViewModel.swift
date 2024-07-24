@@ -21,7 +21,7 @@ final class DiscoverViewModel {
     func getPopularMovies(completion: @escaping (Result<PopularMovies, Error>) -> Void) {
         if isDiscoverLoaded { return }
         let params = DiscoverRequestParams(page: 1)
-        let request = DiscoverRequest(params: params)
+        let request = DiscoverRequest(queryParams: params)
         
         service.getPopularMovies(request: request) { [weak self] response in
             switch response {
@@ -38,7 +38,7 @@ final class DiscoverViewModel {
     @discardableResult
     func getPopularMoviesAsync() async -> Result<PopularMovies, AFError> {
         let params = DiscoverRequestParams(page: 1)
-        let request = DiscoverRequest(params: params)
+        let request = DiscoverRequest(queryParams: params)
         let result = await service.getPopularMoviesAsync(request: request)
         switch result {
         case .success(let movies):

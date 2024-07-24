@@ -20,7 +20,7 @@ final class CategoriesViewModel: ObservableObject {
     
     func getCategories(completion: @escaping (Result<Categories, Error>) -> Void) {
         if isCategoriesLoaded { return }
-        let request = CategoriesRequest(params: CategoriesRequestParams())
+        let request = CategoriesRequest(queryParams: CategoriesRequestParams())
         
         service.getCategories(request: request) { [weak self] response in
             switch response {
@@ -36,7 +36,7 @@ final class CategoriesViewModel: ObservableObject {
     
     @discardableResult
     func getCategories() async -> Result<Categories, AFError> {
-        let request = CategoriesRequest(params: CategoriesRequestParams())
+        let request = CategoriesRequest(queryParams: CategoriesRequestParams())
         let result = await service.getCategoriesAsync(request: request)
         switch result {
         case .success(let categories):
