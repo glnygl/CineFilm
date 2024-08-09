@@ -10,7 +10,7 @@ import Foundation
 final class Utils {
     static func queryString(dictionary: [String:Any]?) -> String {
         guard let dictionary = dictionary else { return "" }
-        var queryString = "?"
+        let queryString = "?"
         let mappedString = dictionary.compactMap({ key, value in
             "\(key)=\(value)"
         }).joined(separator: "&")
