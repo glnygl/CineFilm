@@ -62,6 +62,12 @@ final class MovieDetailViewModel {
         PopularMovie.setMovieData(movie: movie)
     }
     
+    var favoriteMovies: [MovieDataItem]?
+    
+    var selectedMovie: MovieDataItem? {
+        favoriteMovies?.filter({ $0.id == favoriteMovie.id}).first ?? nil
+    }
+    
     func getCast(movieId: Int, completion: @escaping (Result<CastResponse, Error>) -> Void) {
         if isCastLoaded { return }
         let request = CastRequest(movieId: movieId)
