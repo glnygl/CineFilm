@@ -58,14 +58,15 @@ final class MovieDetailViewModel {
         isFavorite ? "heart.fill" : "heart"
     }
     
-    var favoriteMovie: MovieDataItem {
-        PopularMovie.setMovieData(movie: movie)
+    var favoriteMovie: MovieDataItem? {
+        movie?.convertMovieData() ?? nil
     }
     
     var favoriteMovies: [MovieDataItem]?
     
     var selectedMovie: MovieDataItem? {
-        favoriteMovies?.filter({ $0.id == favoriteMovie.id}).first ?? nil
+        guard let favoriteMovie = favoriteMovie else { return nil }
+        return favoriteMovies?.filter({ $0.id == favoriteMovie.id}).first ?? nil
     }
     
     func getCast(movieId: Int, completion: @escaping (Result<CastResponse, Error>) -> Void) {

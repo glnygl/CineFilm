@@ -78,7 +78,8 @@ struct MovieDetailView: View {
                         guard let selectedMovie = viewModel.selectedMovie else { return }
                         context.delete(selectedMovie)
                     } else {
-                        context.insert(viewModel.favoriteMovie)
+                        guard let favoriteMovie = viewModel.favoriteMovie else { return }
+                        context.insert(favoriteMovie)
                     }
                     try! context.save()
                     viewModel.isFavorite.toggle()

@@ -30,7 +30,7 @@ struct PopularMovie: Codable, Identifiable, Hashable {
         case genres = "genre_ids"
     }
     
-    static func setMovieData(movie: PopularMovie?) -> MovieDataItem {
-        return MovieDataItem(id: movie?.id ?? 0, title: movie?.title ?? "", image: movie?.image ?? "", overview: movie?.overview ?? "", relaseDate: movie?.relaseDate ?? "", rate: movie?.rate ?? 0, genres: movie?.genres ?? [])
+    func convertMovieData() -> MovieDataItem {
+        MovieDataItem(id: self.id, title: self.title, image: self.image, overview: self.overview, relaseDate: self.relaseDate, rate: self.rate, genres: self.genres)
     }
 }
