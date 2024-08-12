@@ -73,17 +73,16 @@ struct MovieDetailView: View {
         }.toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button("", systemImage: viewModel.favoriteImage) {
-                    if favoriteMovies.checkIsFavorite(movieId: viewModel.favoriteMovie.id) {
-                        viewModel.isFavorite = false
+                    if viewModel.isFavorite {
                         if let selectedMovie = favoriteMovies.filter({ $0.id == viewModel.favoriteMovie.id}).first {
                             context.delete(selectedMovie)
                             try! context.save()
                         }
                     } else {
-                        viewModel.isFavorite = true
                         context.insert(viewModel.favoriteMovie)
                         try! context.save()
                     }
+                    viewModel.isFavorite.toggle()
                 }
             }
         }
