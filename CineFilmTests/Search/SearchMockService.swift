@@ -13,7 +13,7 @@ import Alamofire
 class SearchMockService: SearchServiceProtocol, Mockable {
     func getSearchedMovies(request: CineFilm.SearchRequest, completion: @escaping (Result<CineFilm.PopularMovies, Alamofire.AFError>) -> Void) {
         
-        if request.params?.query == "Wonka" {
+        if request.queryParams?.query == "Wonka" {
             let data = loadJson(fileName: "SearchFakeData", type: PopularMovies.self)
             completion(.success(data))
         } else {

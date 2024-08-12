@@ -19,7 +19,7 @@ class DiscoverMockService: DiscoverServiceProtocol, Mockable {
     
     func getPopularMovies(request: CineFilm.DiscoverRequest, completion: @escaping (Result<CineFilm.PopularMovies, Alamofire.AFError>) -> Void) {
         if shouldSucceed {            
-            if request.params?.genre == "35" {
+            if request.queryParams?.genre == "35" {
                 let data = loadJson(fileName: "CategoryMoviesFakeData", type: PopularMovies.self)
                 completion(.success(data))
             } else {
@@ -33,7 +33,7 @@ class DiscoverMockService: DiscoverServiceProtocol, Mockable {
     
     func getPopularMoviesAsync(request: CineFilm.DiscoverRequest) async -> Result<CineFilm.PopularMovies, Alamofire.AFError> {
         if shouldSucceed {
-            if request.params?.genre == "35" {
+            if request.queryParams?.genre == "35" {
                 let data = loadJson(fileName: "CategoryMoviesFakeData", type: PopularMovies.self)
                 return .success(data)
             } else {

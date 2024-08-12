@@ -5,7 +5,6 @@
 //  Created by glnygl on 21.12.2023.
 //
 
-import Foundation
 import SwiftData
 
 @Model
@@ -43,8 +42,9 @@ class MovieDataItem: Hashable {
     }
 }
 
-
-extension Array where Element == MovieDataItem {
+//extension Array where Element == MovieDataItem
+typealias MovieDataItemArray = [MovieDataItem]
+extension MovieDataItemArray {
     func checkIsFavorite(movieId: Int) -> Bool {
         let ids = self.map { $0.id }
         return ids.contains(movieId) ? true : false

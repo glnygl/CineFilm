@@ -5,7 +5,6 @@
 //  Created by glnygl on 3.01.2024.
 //
 
-import Foundation
 import Alamofire
 
 enum AppError: Error {
