@@ -73,12 +73,11 @@ struct MovieDetailView: View {
         }.toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button("", systemImage: viewModel.favoriteImage) {
-                    viewModel.favoriteMovies = favoriteMovies
+                    guard let favoriteMovie = viewModel.movie?.convertMovieData() else { return }
                     if viewModel.isFavorite {
-                        guard let selectedMovie = viewModel.selectedMovie else { return }
+                        guard let selectedMovie = favoriteMovies.getSelectedMovie(movieId: favoriteMovie.id) else { return }
                         context.delete(selectedMovie)
                     } else {
-                        guard let favoriteMovie = viewModel.favoriteMovie else { return }
                         context.insert(favoriteMovie)
                     }
                     try! context.save()
