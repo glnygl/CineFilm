@@ -10,6 +10,7 @@
 - List 
 - Search
 - Favorite
+- Categories
 - Movie Detail
 
 ## API
