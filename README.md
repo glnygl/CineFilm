@@ -1,12 +1,28 @@
 # CineFilm
 
-The Movie DataBase API
+## Requirements
+- iOS 17.0+
 
-* SwiftUI 
-* SwiftData
-* MVVM
-* Alamofire
-* XCUnitTest
-* CocoaPods & Swift Package Manager
+## Architecture
+- MVVM 
+
+## Features
+- List 
+- Search
+- Favorite
+- Movie Detail
+
+## API
+- The Movie DataBase TMDB (https://api.themoviedb.org/3/)
+
+## Keywords
+- Swift
+- SwiftUI
+- Swift Package Manager (SPM)
+- CocoaPods 
+- SwiftData
+- MVVM
+- RestAPI
 
 ![](AppScreens.png)
+
