@@ -9,13 +9,13 @@ import SwiftData
 
 @Model
 class MovieDataItem: Hashable {
-    let id: Int
-    let title: String
-    let image: String?
-    let overview: String
-    let relaseDate: String
-    let rate: Double
-    let genres: [Int]
+    var id: Int
+    var title: String
+    var image: String?
+    var overview: String
+    var relaseDate: String
+    var rate: Double
+    var genres: [Int]
     
     enum CodingKeys: String, CodingKey {
         case id
