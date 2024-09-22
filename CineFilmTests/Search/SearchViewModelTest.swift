@@ -18,8 +18,8 @@ final class SearchViewModelTest: XCTestCase {
     }
     
     override func tearDown() {
-        super.tearDown()
         viewModel = nil
+        super.tearDown()
     }
     
     func test_fetchSearchedMovies_fetchSuccesfully() {

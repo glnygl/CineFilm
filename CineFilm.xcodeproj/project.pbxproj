@@ -280,6 +280,13 @@
 			path = SearchService;
 			sourceTree = "<group>";
 		};
+		296C1EDE2C9DCCBD00E1A572 /* CachedAsyncImage */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CachedAsyncImage;
+			sourceTree = "<group>";
+		};
 		299A71862A955BB6009F14F1 /* CastService */ = {
 			isa = PBXGroup;
 			children = (
@@ -381,6 +388,7 @@
 		29B218DA2A8BF61B00DF443B /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				296C1EDE2C9DCCBD00E1A572 /* CachedAsyncImage */,
 				29B218F92A8BF9BB00DF443B /* Services */,
 				291E3D3E2B45CA90003601C6 /* AppError.swift */,
 			);

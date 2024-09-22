@@ -24,6 +24,10 @@ final class MovieDetailViewModelTest: XCTestCase {
     }
     
     override func tearDown() {
+        movie = nil
+        favoriteMovie = nil
+        storedMovie = nil
+        viewModel = nil
         super.tearDown()
     }
     

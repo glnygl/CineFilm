@@ -18,8 +18,8 @@ final class CategoryViewModelTest: XCTestCase {
     }
     
     override func tearDown() {
-        super.tearDown()
         viewModel = nil
+        super.tearDown()
     }
     
     func test_getMovies_fetchSuccesfully() {

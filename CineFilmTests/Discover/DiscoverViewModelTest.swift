@@ -18,8 +18,8 @@ final class DiscoverViewModelTest: XCTestCase {
     }
     
     override func tearDown() {
-        super.tearDown()
         viewModel = nil
+        super.tearDown()
     }
     
     func test_getPopularMovies_fetchSuccesfully() {

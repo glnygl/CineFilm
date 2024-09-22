@@ -18,8 +18,8 @@ final class CategoriesViewModelTest: XCTestCase {
     }
     
     override func tearDown() {
-        super.tearDown()
         viewModel = nil
+        super.tearDown()
     }
     
     func test_getCategories_fetchSuccesfully() {
