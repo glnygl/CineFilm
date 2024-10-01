@@ -10,7 +10,7 @@ import SwiftData
 
 struct FavoritesView: View {
 
-    @Query private var favoriteMovies : [MovieDataItem]
+    @Query(sort: \MovieDataItem.title) private var favoriteMovies : [MovieDataItem]
     
     let columns = [
         GridItem(.flexible(), spacing: 10),
