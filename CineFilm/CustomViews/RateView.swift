@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct RateView: View {
+    @State var rate: Double = 0
     @State var progress: Double
     var body: some View {
         ZStack {
@@ -22,10 +23,20 @@ struct RateView: View {
                 .stroke(lineWidth: 4.0)
                 .foregroundColor(Color.appColor.lightGreen)
             Circle()
-                  .trim(from: 0.0, to: CGFloat(min(self.progress, 10.0)))
-                  .stroke(lineWidth: 4.0)
-                  .foregroundColor(Color.appColor
+                .trim(from: 0.0, to: rate)
+                .stroke(lineWidth: 4.0)
+                .foregroundColor(Color.appColor
                     .neonGreen)
+                .rotationEffect(.degrees(270))
+        }
+        .onAppear {
+            withAnimation(.linear(duration: 0.4)) {
+                rate = progress
+            }
         }
     }
+}
+
+#Preview {
+    RateView(progress: 7.0)
 }
