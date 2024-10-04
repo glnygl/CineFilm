@@ -14,18 +14,18 @@ struct RateView: View {
         ZStack {
             Circle()
                 .stroke(lineWidth: 16.0)
-                .foregroundColor(Color.appColor.darkGreen)
+                .foregroundStyle(Color.appColor.darkGreen)
             Circle()
                 .fill(Color.appColor.darkGreen)
             Text(String(format: "%.1f", progress * 10))
-                .foregroundColor(.white).font(.system(size: 10, weight: .bold))
+                .foregroundStyle(.white).font(.system(size: 10, weight: .bold))
             Circle()
                 .stroke(lineWidth: 4.0)
-                .foregroundColor(Color.appColor.lightGreen)
+                .foregroundStyle(Color.appColor.lightGreen)
             Circle()
                 .trim(from: 0.0, to: rate)
                 .stroke(lineWidth: 4.0)
-                .foregroundColor(Color.appColor
+                .foregroundStyle(Color.appColor
                     .neonGreen)
                 .rotationEffect(.degrees(270))
         }

@@ -28,8 +28,10 @@ struct DiscoverRowView: View {
                     }
                 )
                 VStack(spacing: 2) {
-                    Text(viewModel.title).font(.system(size: 12)).lineLimit(1).foregroundColor(.black)
-                    Text(viewModel.releaseDate).font(.system(size: 10)).lineLimit(1).foregroundColor(.gray)
+                    Text(viewModel.title).font(.system(size: 12)).lineLimit(1)
+                        .foregroundStyle(.black)
+                    Text(viewModel.releaseDate).font(.system(size: 10)).lineLimit(1)
+                        .foregroundStyle(.gray)
                     Spacer()
                 }.padding(4)
 

@@ -20,13 +20,13 @@ struct CategoryRowView: View {
             Text(category?.name ?? "")
                 .font(.system(size: 20))
                 .fontWeight(.semibold)
-                .foregroundColor(.black)
+                .foregroundStyle(.black)
             Spacer()
             Image(systemName: "chevron.right")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 7)
-                .foregroundColor(Color.appColor.torchRed)
+                .foregroundStyle(Color.appColor.torchRed)
         }
     }
 }

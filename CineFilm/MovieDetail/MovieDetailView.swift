@@ -35,28 +35,25 @@ struct MovieDetailView: View {
                         )
                         VStack(spacing: 6) {
                             Text(viewModel.title)
-                                .foregroundColor(.white)
                                 .font(.system(size: 20, weight: .bold))
                                 .frame(maxWidth: 164)
                                 .multilineTextAlignment(.center)
                             Text(viewModel.releaseDate)
-                                .foregroundColor(.white)
                                 .font(.system(size: 12, weight: .regular))
                                 .padding(.bottom, 16)
                                 .lineLimit(1)
                             VStack(spacing: 20) {
                                 RateView(progress: (viewModel.shownRate)).frame(width: 32, height: 32)
                                 Text(viewModel.genre)
-                                    .foregroundColor(.white)
                                     .font(.system(size: 12, weight: .regular))
                                     .padding(EdgeInsets(top: 4, leading: 8, bottom: 4, trailing: 8))
                                     .lineLimit(1)
                                     .background(Color.appColor.torchRed)
                             }
-                        }
+                        }.foregroundStyle(.white)
                     }
                     Text(viewModel.overview)
-                        .foregroundColor(.white)
+                        .foregroundStyle(.white)
                         .font(.system(size: 14, weight: .semibold))
                         .padding(20)
                     
